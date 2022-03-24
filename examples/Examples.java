@@ -24,7 +24,6 @@ import javax.swing.UIManager;
 
 import org.moeaframework.analysis.diagnostics.LaunchDiagnosticTool;
 import org.moeaframework.examples.ga.LOTZ.LOTZExample;
-import org.moeaframework.examples.ga.knapsack.KnapsackExample;
 import org.moeaframework.examples.ga.onemax.OneMaxExample;
 import org.moeaframework.examples.ga.tsplib.A280Example;
 import org.moeaframework.examples.ga.tsplib.PR76Example;
@@ -36,6 +35,8 @@ import org.moeaframework.examples.gp.regression.SexticExample;
 import org.moeaframework.examples.gui.Example;
 import org.moeaframework.examples.gui.ExamplesGUI;
 import org.moeaframework.examples.gui.TerminalExample;
+
+import allocation.storage.KnapsackExample;
 
 /**
  * Launches the demo application allowing users to learn about and experiment
