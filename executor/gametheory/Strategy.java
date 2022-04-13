@@ -17,4 +17,5 @@ public class Strategy{
     public void addProperty(int property){
         properties.add(property);
     }
+   
 }

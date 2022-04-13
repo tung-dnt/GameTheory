@@ -21,6 +21,7 @@ public class GameTheoryObject implements Problem {
 	private SpecialPlayer specialPlayer;
 	private List<NormalPlayer> normalPlayers;
 	private List<Conflict> conflictSet;
+	private List<Integer> normalPlayerWeights= new ArrayList<>();
 	
 	public GameTheoryObject(String path, int startRow) throws IOException {
 		super();
@@ -46,20 +47,20 @@ public class GameTheoryObject implements Problem {
 
         startRow += 2;//important
 
-//        NORMAL PLAYER HANDLER
+//      NORMAL PLAYER HANDLER
         List<NormalPlayer> normalPlayerList;
         int numberOfNormalPlayer = InputDataDriver.getValueOfCoordinate(startRow, 0, path);
         int numberOfProperties = InputDataDriver.getValueOfCoordinate(startRow, 1, path);
-        int[] normalPlayerWeights = new int[numberOfProperties];
         
         //get weight of each strategy
         startRow += 1; //Important
         
         for (int i = 0; i < numberOfProperties ; i++) {
-            normalPlayerWeights[i] = InputDataDriver.getValueOfCoordinate(startRow, i, path);
+            addWeight(InputDataDriver.getValueOfCoordinate(startRow, i, path));
         }
         // normal players
         startRow += 1; //Important
+       
         normalPlayerList = new ArrayList<>(numberOfNormalPlayer);
         for (int i = 0; i <numberOfNormalPlayer; i++) {
             normalPlayerList.add(InputDataDriver.setNormalPlayer(startRow, numberOfProperties,path));
@@ -67,6 +68,18 @@ public class GameTheoryObject implements Problem {
         }
         setNormalPlayers(normalPlayerList);
 	}
+	
+    public List<Integer> getWeights() {
+        return normalPlayerWeights;
+    }
+
+    public int getWeightyAt(int index){
+        return normalPlayerWeights.get(index);
+    }
+
+    public void addWeight(int property){
+    	normalPlayerWeights.add(property);
+    }
 	
 	public SpecialPlayer getSpecialPlayer() {
 		return specialPlayer;
@@ -111,27 +124,6 @@ public class GameTheoryObject implements Problem {
 	@Override
 	public void evaluate(Solution solution) {
 		// TODO Auto-generated method stub
-//		double[] f = new double[storageNumber];
-//		double[] g = new double[storageNumber];
-//		double[] k = new double[storageNumber];
-
-		// calculate the profits and area for the storage
-//		for (int i = 0; i < items.length; i++) {
-//			for (int j = 0; j < storageNumber; j++) {
-//				f[j] += profit[j][items[i]];
-//				g[j] += area[j][items[i]];
-//				k[j] += expiration[j][items[i]];
-//			}
-//		}
-//
-//		// check if any weights exceed the capacities
-//		for (int j = 0; j < storageNumber; j++) {
-//			if (g[j] <= capacity[j]) {
-//				g[j] = 0.0;
-//			} else {
-//				g[j] = g[j] - capacity[j];
-//			}
-//		}
 
 		// negate the objectives since storage is maximization
 //		solution.setObjectives(Vector.negate(f));

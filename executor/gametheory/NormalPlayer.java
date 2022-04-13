@@ -1,5 +1,6 @@
 package gametheory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,6 +11,7 @@ import java.util.List;
  */
 public class NormalPlayer {
     private List<Strategy> strategies;
+    
     public NormalPlayer(List<Strategy> strategies){
         this.strategies = strategies;
     }
