@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="init InputDataDriver">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gametheory/GameTheoryObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gametheory/GameTheoryObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executor/gametheory/GameTheoryObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/executor/gametheory/GameTheoryObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +11,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -24,18 +26,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TrainReservation/server" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/tungdnt/Documents/FIT/GameTheory"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.StorageExecution">
     <configuration name="KnapsackSubsetExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.moeaframework.examples.ga.knapsack.KnapsackSubsetExample" />
@@ -67,6 +63,8 @@
       <list>
         <item itemvalue="Application.StorageExecution" />
         <item itemvalue="Application.KnapsackSubsetExample" />
+        <item itemvalue="Application.StorageExecution" />
+        <item itemvalue="Application.KnapsackSubsetExample" />
       </list>
     </recent_temporary>
   </component>
@@ -86,6 +84,7 @@
       <workItem from="1649431118716" duration="569000" />
       <workItem from="1649436428380" duration="223000" />
       <workItem from="1649493433080" duration="1418000" />
+      <workItem from="1649949443345" duration="70000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -120,6 +119,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init InputDataDriver" />
-    <option name="LAST_COMMIT_MESSAGE" value="init InputDataDriver" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
 </project>
