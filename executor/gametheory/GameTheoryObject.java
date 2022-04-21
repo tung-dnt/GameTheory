@@ -26,19 +26,21 @@ public class GameTheoryObject implements Problem {
 	public GameTheoryObject(String path, int startRow) throws IOException {
 		super();
 		load(path, startRow);
+		eliminateConflictStrategies();
 	} 
 	
 	private void load(String path, int startRow) throws IOException {
 //    	SPECIAL PLAYER HANDLER
         SpecialPlayer specialPlayer = new SpecialPlayer();
-
-        if(InputDataDriver.getValueOfCoordinate(startRow,0, path) != 0){
-            int numberOfProperties =  InputDataDriver.getValueOfCoordinate(startRow,1,path); // row = 0;
+        InputDataDriver driver = new InputDataDriver(path);
+        
+        if(driver.getValueOfCoordinate(startRow,0) != 0){
+            int numberOfProperties =  driver.getValueOfCoordinate(startRow,1); // row = 0;
             startRow++;
             specialPlayer.setNumberOfProperties(numberOfProperties);
             for (int i = 0; i < specialPlayer.getNumberOfProperties(); i++) {
-                int  property = InputDataDriver.getValueOfCoordinate(startRow,i, path); //row = 1
-                int weight  = InputDataDriver.getValueOfCoordinate(startRow + 1,i,path); //row = 2
+                int  property = driver.getValueOfCoordinate(startRow,i); //row = 1
+                int weight  = driver.getValueOfCoordinate(startRow + 1,i); //row = 2
                 specialPlayer.addProperty(property);
                 specialPlayer.addWeight(weight);
             }
@@ -49,24 +51,44 @@ public class GameTheoryObject implements Problem {
 
 //      NORMAL PLAYER HANDLER
         List<NormalPlayer> normalPlayerList;
-        int numberOfNormalPlayer = InputDataDriver.getValueOfCoordinate(startRow, 0, path);
-        int numberOfProperties = InputDataDriver.getValueOfCoordinate(startRow, 1, path);
+        int numberOfNormalPlayer = driver.getValueOfCoordinate(startRow, 0);
+        int numberOfProperties = driver.getValueOfCoordinate(startRow, 1);
         
         //get weight of each strategy
-        startRow += 1; //Important
+        startRow ++; //Important
         
         for (int i = 0; i < numberOfProperties ; i++) {
-            addWeight(InputDataDriver.getValueOfCoordinate(startRow, i, path));
+            addWeight(driver.getValueOfCoordinate(startRow, i));
         }
         // normal players
-        startRow += 1; //Important
+        startRow ++; //Important
        
         normalPlayerList = new ArrayList<>(numberOfNormalPlayer);
         for (int i = 0; i <numberOfNormalPlayer; i++) {
-            normalPlayerList.add(InputDataDriver.setNormalPlayer(startRow, numberOfProperties,path));
+            normalPlayerList.add(driver.setNormalPlayer(startRow, numberOfProperties));
             startRow++;
         }
         setNormalPlayers(normalPlayerList);
+        conflictSet = driver.getConflictSet(startRow++);
+	}
+	
+	private void eliminateConflictStrategies() {
+		for(int i = 0; i < conflictSet.size(); ++i) {
+			NormalPlayer evaluatingLeftPlayer = normalPlayers.get(conflictSet.get(i).getLeftPlayer());
+			NormalPlayer evaluatingRightPlayer = normalPlayers.get(conflictSet.get(i).getRightPlayer());
+			int leftConflictStrat = conflictSet.get(i).getLeftPlayerStrategy();
+			int rightConflictStrat = conflictSet.get(i).getRightPlayerStrategy();
+			
+			if(evaluatingLeftPlayer.getStrategyAt(leftConflictStrat) != null) {
+				evaluatingLeftPlayer.removeStrategiesAt(leftConflictStrat);
+			}
+			if(evaluatingRightPlayer.getStrategyAt(rightConflictStrat) != null) {
+				evaluatingRightPlayer.removeStrategiesAt(rightConflictStrat);
+			}
+		}
+		for(NormalPlayer player: normalPlayers) {
+			player.removeAllNull();
+		}
 	}
 	
     public List<Integer> getWeights() {
@@ -124,9 +146,8 @@ public class GameTheoryObject implements Problem {
 	@Override
 	public void evaluate(Solution solution) {
 		// TODO Auto-generated method stub
-
 		// negate the objectives since storage is maximization
-//		solution.setObjectives(Vector.negate(f));
+//		solution.setObjectives(Vector.negate());
 //		solution.setConstraints(g);
 	}
 	@Override

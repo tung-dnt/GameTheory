@@ -1,6 +1,5 @@
 package gametheory;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,14 +18,24 @@ public class NormalPlayer {
     public List<Strategy> getStrategiesList() {
         return strategies;
     }
-
-    public int getStrategiesSize(){
-        return strategies.size();
-    }
+    
     public Strategy getStrategyAt(int index){
         return strategies.get(index);
     }
-
+    
+    public void removeStrategiesAt(int index) {
+    	strategies.set(index, null);
+    }
+    
+    public void setStrategies(List<Strategy>strat) {
+    	strategies = strat;
+    }
+    public void removeAllNull() {
+    	for(int i=0; i<strategies.size(); ++i) {
+    		if(strategies.get(i)==null) strategies.remove(i);
+    	}
+    }
+    
     public void display(){
         for(Strategy s: strategies){
             System.out.print("Strategy " + (strategies.indexOf(s) + 1) + ":\t"  );
