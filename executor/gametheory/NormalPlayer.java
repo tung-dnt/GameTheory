@@ -38,9 +38,10 @@ public class NormalPlayer {
     
     public void display(){
         for(Strategy s: strategies){
-            System.out.print("Strategy " + (strategies.indexOf(s) + 1) + ":\t"  );
+        	if(s==null) continue;
+            System.out.println("Strategy " + (strategies.indexOf(s) + 1) + ":\t"  );
             for (int p : s.getProperties()){
-                System.out.print(p + "\t");
+                System.out.print(p + ", ");
             }
             System.out.println();
         }
