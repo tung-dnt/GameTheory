@@ -39,6 +39,6 @@ public class Conflict {
     	return strategies;
     }
     public String toString(){
-        return String.format("%s,%s,%s,%s",leftPlayer,leftPlayerStrategy,rightPlayer,rightPlayerStrategy);
+        return String.format("Player: %s, Strategy: %s, Player: %s, Strategy: %s",leftPlayer + 1,leftPlayerStrategy + 1,rightPlayer + 1,rightPlayerStrategy +1);
     }
 }

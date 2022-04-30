@@ -27,6 +27,7 @@ public class GameTheoryObject implements Problem {
 		super();
 		load(path, startRow);
 		eliminateConflictStrategies();
+		printConflictInformation(); 	
 	} 
 	
 	private void load(String path, int startRow) throws IOException {
@@ -70,10 +71,12 @@ public class GameTheoryObject implements Problem {
         }
         setNormalPlayers(normalPlayerList);
         conflictSet = driver.getConflictSet(startRow++);
+        InputDataDriver.displayNormalPlayerList(normalPlayerList);
 	}
 	
 	private void eliminateConflictStrategies() {
 		for(int i = 0; i < conflictSet.size(); ++i) {
+			
 			NormalPlayer evaluatingLeftPlayer = normalPlayers.get(conflictSet.get(i).getLeftPlayer());
 			NormalPlayer evaluatingRightPlayer = normalPlayers.get(conflictSet.get(i).getRightPlayer());
 			int leftConflictStrat = conflictSet.get(i).getLeftPlayerStrategy();
@@ -86,9 +89,7 @@ public class GameTheoryObject implements Problem {
 				evaluatingRightPlayer.removeStrategiesAt(rightConflictStrat);
 			}
 		}
-		for(NormalPlayer player: normalPlayers) {
-			player.removeAllNull();
-		}
+		for(NormalPlayer player: normalPlayers) player.removeAllNull();
 	}
 	
     public List<Integer> getWeights() {
@@ -147,8 +148,8 @@ public class GameTheoryObject implements Problem {
 	public void evaluate(Solution solution) {
 		// TODO Auto-generated method stub
 		// negate the objectives since storage is maximization
-//		solution.setObjectives(Vector.negate());
-//		solution.setConstraints(g);
+		//solution.setObjectives(Vector.negate());
+		//solution.setConstraints(g);
 	}
 	@Override
 	public Solution newSolution() {
@@ -160,4 +161,20 @@ public class GameTheoryObject implements Problem {
 	public void close() {
 		// TODO Auto-generated method stub
 	}
+	public void printConflictInformation() {
+		int playerCount = 1;
+		System.out.println();
+		System.out.println("CONFLICT SET: ");
+		for(int i=0; i < conflictSet.size(); ++i) {
+			System.out.println(conflictSet.get(i).toString());
+		}
+		System.out.println();
+		System.out.println("NON-CONFLICT STRATEGIES:");
+		for(NormalPlayer player: normalPlayers) {
+			System.out.println("Player "+playerCount+": ");
+			player.display();
+			++playerCount;
+		}
+		System.out.println();
+	} 
 }
