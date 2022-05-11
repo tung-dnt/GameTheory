@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="init InputDataDriver">
+      <change afterPath="$PROJECT_DIR$/.idea/GameTheory.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/poi_5_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/poi_5_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/gametheory/GameTheoryObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gametheory/GameTheoryObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executor/gametheory/GameTheoryObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/executor/gametheory/GameTheoryObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executor/gametheory/InputDataDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/executor/gametheory/InputDataDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executor/Example6.java" beforeDir="false" afterPath="$PROJECT_DIR$/executor/Example6.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="thuyntm" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,17 +32,30 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/tungdnt/Documents/FIT/GameTheory",
+    "last_opened_file_path": "/home/tung-dnt/Documents/FIT/GameTheory/lib/rsyntaxtextarea.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.StorageExecution">
-    <configuration name="KnapsackSubsetExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.moeaframework.examples.ga.knapsack.KnapsackSubsetExample" />
+  <component name="RunManager" selected="Application.Example1">
+    <configuration name="Example1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Example1" />
+      <module name="GameTheory" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.moeaframework.examples.ga.knapsack.*" />
+          <option name="PATTERN" value="gametheory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -48,13 +63,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StorageExecution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="gametheory.StorageExecution" />
+    <configuration name="KnapsackSubsetExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.moeaframework.examples.ga.knapsack.KnapsackSubsetExample" />
+      <module name="GameTheory" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gametheory.*" />
+          <option name="PATTERN" value="org.moeaframework.examples.ga.knapsack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,12 +89,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.KnapsackSubsetExample" />
+      <item itemvalue="Application.Example1" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StorageExecution" />
+        <item itemvalue="Application.Example1" />
         <item itemvalue="Application.KnapsackSubsetExample" />
         <item itemvalue="Application.StorageExecution" />
         <item itemvalue="Application.KnapsackSubsetExample" />
+        <item itemvalue="Application.StorageExecution" />
       </list>
     </recent_temporary>
   </component>
@@ -102,6 +121,7 @@
       <workItem from="1649493433080" duration="1418000" />
       <workItem from="1649949443345" duration="85000" />
       <workItem from="1650640159327" duration="1684000" />
+      <workItem from="1652303406504" duration="1238000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
