@@ -13,7 +13,7 @@ public class GameTheoryProblem implements Problem {
 	private SpecialPlayer specialPlayer;
 	private List<NormalPlayer> normalPlayers;
 	private List<Conflict> conflictSet;
-	private List<Double> normalPlayerWeights = new ArrayList<>();
+	private List<Double> normalPlayerWeights;
 
 	public GameTheoryProblem(String path, int startRow) throws IOException {
 		super();
@@ -22,52 +22,23 @@ public class GameTheoryProblem implements Problem {
 	}
 
 	private void load(String path, int startRow) throws IOException {
+		startRow--;
 		InputDataDriver driver = new InputDataDriver(path);
-//    	SPECIAL PLAYER HANDLER        
-		if (driver.getValueOfCoordinate(startRow, 0) != 0) {
-			SpecialPlayer specialPlayer = new SpecialPlayer();
+		boolean isSpecialPlayerExist = driver.getValueOfCoordinate(startRow, 0) != 0;
+		int NORMAL_PLAYER_START_ROW = isSpecialPlayerExist ? startRow + 3 : startRow + 1;
+		int numberOfNP = driver.getValueOfCoordinate(NORMAL_PLAYER_START_ROW, 0).intValue();
+		int CONFLICT_SET_START_ROW = isSpecialPlayerExist ? startRow + 5 + numberOfNP : startRow+ 3 + numberOfNP;
 
-			int numberOfProperties = driver.getValueOfCoordinate(startRow, 1).intValue(); // row = 0;
-			startRow++;
-			specialPlayer.setNumberOfProperties(numberOfProperties);
-			for (int i = 0; i < specialPlayer.getNumberOfProperties(); i++) {
-				double property = driver.getValueOfCoordinate(startRow, i); // row = 1
-				double weight = driver.getValueOfCoordinate(startRow + 1, i); // row = 2
-				specialPlayer.addProperty(property);
-				specialPlayer.addWeight(weight);
-			}
-			specialPlayer.setPayoff();
-			setSpecialPlayer(specialPlayer);
-		} else {
-			startRow += 1;
-		}
-		startRow += 2;// important
-
-//      NORMAL PLAYER HANDLER
-		List<NormalPlayer> normalPlayerList;
-		int numberOfNormalPlayer = driver.getValueOfCoordinate(startRow, 0).intValue();
-		int numberOfProperties = driver.getValueOfCoordinate(startRow, 1).intValue();
-
-		// get weight of each strategy
-		startRow++; // Important
-
-		for (int i = 0; i < numberOfProperties; i++) {
-			addWeight(driver.getValueOfCoordinate(startRow, i));
-		}
-		// normal players
-		startRow++; // Important
-
-		normalPlayerList = new ArrayList<>(numberOfNormalPlayer);
-		for (int i = 0; i < numberOfNormalPlayer; i++) {
-			normalPlayerList.add(driver.setNormalPlayer(startRow, numberOfProperties, normalPlayerWeights));
-			startRow++;
+		if(isSpecialPlayerExist) {
+			specialPlayer=driver.loadSpecialPlayerFromFile(startRow);
+			specialPlayer.displayInf();
 		}
 
-		setNormalPlayers(normalPlayerList);
+		normalPlayerWeights = driver.loadNormalPlayerWeights(NORMAL_PLAYER_START_ROW);
+		normalPlayers = driver.loadNormalPlayersFromFile(NORMAL_PLAYER_START_ROW, normalPlayerWeights);
+		conflictSet = driver.loadConflictSetFromFile(CONFLICT_SET_START_ROW);
 
-		conflictSet = driver.getConflictSet(startRow++);
-
-		InputDataDriver.displayNormalPlayerList(normalPlayerList);
+		InputDataDriver.displayNormalPlayerList(normalPlayers);
 	}
 
 	private void eliminateConflictStrategies() {
@@ -89,18 +60,6 @@ public class GameTheoryProblem implements Problem {
 			for (NormalPlayer player : normalPlayers)
 				player.removeAllNull();
 		}
-	}
-
-	private void addWeight(double property) {
-		normalPlayerWeights.add(property);
-	}
-
-	private void setSpecialPlayer(SpecialPlayer spPlayer) {
-		this.specialPlayer = spPlayer;
-	}
-
-	private void setNormalPlayers(List<NormalPlayer> normalPlayers) {
-		this.normalPlayers = normalPlayers;
 	}
 
 	public List<NormalPlayer> getNormalPlayers() {

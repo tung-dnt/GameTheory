@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @object A typical SpecialPlayer is
+ * @object A typical SpecialPlayer who doesn't directly interfere to the problem
  *
- * @attributes numberOfProperties int properties List<Integer> weights
- *             List<Integer>
+ * @attributes
+ * 	numberOfProperties int
+ * 	properties List<Double>
+ * 	weights List<Double>
+ * 	payoff double
  */
 public class SpecialPlayer {
 	private int numberOfProperties;
@@ -63,6 +66,7 @@ public class SpecialPlayer {
 	}
 
 	public void displayInf() {
+		System.out.println("SPECIAL PLAYER: ");
 		System.out.println("Properties : ");
 		properties.forEach(x -> System.out.print(x + "\t"));
 		System.out.println("\n" + "Weight");

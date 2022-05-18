@@ -17,7 +17,7 @@ public class StorageExecution {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		GameTheoryProblem object = new GameTheoryProblem("newData.xlsx", 16);
+		GameTheoryProblem object = new GameTheoryProblem("newData.xlsx", 17);
 
 		if (object == null) {
 			System.err.println("Unable to generate GameTheoryProblem");

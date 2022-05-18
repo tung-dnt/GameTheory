@@ -27,24 +27,15 @@ public class InputDataDriver {
 		sheet = workbook.getSheetAt(0);
 	}
 
-	/**
-	 *
-	 * @param normalPlayerList
-	 * @param row
-	 * @return List<Conflict>
-	 * @throws IOException
-	 */
-	public List<Conflict> getConflictSet(int row) throws IOException {
+	public List<Conflict> loadConflictSetFromFile(int row) throws IOException {
 		List<Conflict> conflictSet = new ArrayList<>();
 
 		if (isRowEmpty(row)) {
 			System.out.println("No Conflict Set");
 			return null;
 		}
-
 		while (!isRowEmpty(row)) {
 			int col = 0;
-
 			while (isCellExist(row, col)) {
 				String s = getStringOfCoordinate(row, col);
 				if (s != null) {
@@ -58,6 +49,45 @@ public class InputDataDriver {
 		return conflictSet;
 	}
 
+	public List<Double> loadNormalPlayerWeights(int startRow) throws IOException {
+		List<Double> weights = new ArrayList<>();
+
+		int numberOfWeights = getValueOfCoordinate(startRow, 1).intValue();
+		for (int i = 0; i < numberOfWeights; i++) {
+			weights.add(getValueOfCoordinate(startRow, i));
+		}
+		return  weights;
+	}
+
+	public List<NormalPlayer> loadNormalPlayersFromFile (int startRow, List<Double> normalPlayerWeights) throws IOException {
+		List<NormalPlayer> normalPlayerList  = new ArrayList<>();
+		int numberOfNormalPlayer = getValueOfCoordinate(startRow, 0).intValue();
+		int numberOfProperties = getValueOfCoordinate(startRow, 1).intValue();
+
+		startRow += 2;
+		for (int i = 0; i < numberOfNormalPlayer; i++) {
+			normalPlayerList.add(setNormalPlayer(startRow, numberOfProperties, normalPlayerWeights));
+			startRow++;
+		}
+		return normalPlayerList;
+	}
+
+	public SpecialPlayer loadSpecialPlayerFromFile(int startRow) throws IOException {
+		SpecialPlayer specialPlayer = new SpecialPlayer();
+		int numberOfProperties = getValueOfCoordinate(startRow, 1).intValue();
+		specialPlayer.setNumberOfProperties(numberOfProperties);
+
+		for (int i = 0; i < specialPlayer.getNumberOfProperties(); i++) {
+			double property = getValueOfCoordinate(startRow + 1, i);
+			double weight = getValueOfCoordinate(startRow + 2, i);
+			specialPlayer.addProperty(property);
+			specialPlayer.addWeight(weight);
+		}
+
+		specialPlayer.setPayoff();
+		return specialPlayer;
+	}
+
 	private boolean isCellExist(int rowIndex, int columnIndex) throws IOException {
 		Row row = sheet.getRow(rowIndex);
 		Cell cell = row.getCell(columnIndex);
@@ -65,7 +95,7 @@ public class InputDataDriver {
 		return cell != null;
 	}
 
-	public NormalPlayer setNormalPlayer(int row, int numberOfProperties, List<Double> weights) throws IOException {
+	private NormalPlayer setNormalPlayer(int row, int numberOfProperties, List<Double> weights) throws IOException {
 		int strategiesOfPlayer = getValueOfCoordinate(row, 0).intValue();
 		List<Strategy> strategies = new ArrayList<>(strategiesOfPlayer);
 		int column = 1;
@@ -106,7 +136,7 @@ public class InputDataDriver {
 		return cell.getStringCellValue();
 	}
 
-	public int getColumnNumberofRow(int rowIndex) throws IOException {
+	public int getColumnNumberOfRow(int rowIndex) throws IOException {
 		return sheet.getRow(0).getPhysicalNumberOfCells();
 	}
 
