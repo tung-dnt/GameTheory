@@ -23,7 +23,6 @@ public class InputDataDriver {
 		this.path = path;
 		file = new FileInputStream(path);
 		workbook = new XSSFWorkbook(file);
-		// get the first sheet
 		sheet = workbook.getSheetAt(0);
 	}
 
@@ -135,10 +134,10 @@ public class InputDataDriver {
 		file.close();
 		return cell.getStringCellValue();
 	}
-
-	public int getColumnNumberOfRow(int rowIndex) throws IOException {
-		return sheet.getRow(0).getPhysicalNumberOfCells();
-	}
+//
+//	public int getColumnNumberOfRow(int rowIndex) throws IOException {
+//		return sheet.getRow(0).getPhysicalNumberOfCells();
+//	}
 
 	public boolean isRowEmpty(int rowIndex) throws IOException {
 		Row row = sheet.getRow(rowIndex);

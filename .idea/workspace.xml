@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_13,_12_05_2022_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_13__12_05_2022__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/newData.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/InputDataDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/InputDataDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executor/NormalPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/NormalPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +135,9 @@
       <workItem from="1652327282946" duration="451000" />
       <workItem from="1652378119792" duration="4543000" />
       <workItem from="1652805439525" duration="5089000" />
-      <workItem from="1652867684698" duration="2226000" />
+      <workItem from="1652867684698" duration="3565000" />
+      <workItem from="1652925889449" duration="6813000" />
+      <workItem from="1653124273308" duration="477000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -175,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652305254389</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update solutions">
+      <created>1652869947700</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652869947700</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,14 +208,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init InputDataDriver" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Update solutions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update solutions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/executor/InputDataDriver.java</url>
-          <line>39</line>
+          <line>38</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

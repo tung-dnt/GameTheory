@@ -1,8 +1,6 @@
 package executor;
 
 import java.io.IOException;
-import org.moeaframework.util.Vector;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.moeaframework.core.Problem;
@@ -44,7 +42,6 @@ public class GameTheoryProblem implements Problem {
 	private void eliminateConflictStrategies() {
 		if (conflictSet != null) {
 			for (int i = 0; i < conflictSet.size(); ++i) {
-
 				NormalPlayer evaluatingLeftPlayer = normalPlayers.get(conflictSet.get(i).getLeftPlayer());
 				NormalPlayer evaluatingRightPlayer = normalPlayers.get(conflictSet.get(i).getRightPlayer());
 				int leftConflictStrat = conflictSet.get(i).getLeftPlayerStrategy();
@@ -89,18 +86,14 @@ public class GameTheoryProblem implements Problem {
 		// TODO Auto-generated method stub
 		return conflictSet.size();
 	}
-
 	@Override
 	public void evaluate(Solution solution) {
 		double[] objectives = new double[normalPlayers.size()];
-
 		for (int i = 0; i < objectives.length; ++i) {
 			objectives[i] = normalPlayers.get(i).getBestResponse();
 		}
-
 		solution.setObjectives((objectives));
 	}
-
 	@Override
 	public Solution newSolution() {
 		Solution solution = new Solution(1, normalPlayers.size());

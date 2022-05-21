@@ -17,7 +17,7 @@ public class NormalPlayer {
 
 	public int getBestResponse() {
 		int bestResponse = 0;
-		
+
 		List<Double> payoffs = new ArrayList<>();
 
 		for (Strategy s : strategies) {
@@ -34,30 +34,18 @@ public class NormalPlayer {
 
 		return bestResponse;
 	}
-
-	public List<Strategy> getStrategiesList() {
-		return strategies;
-	}
-
 	public Strategy getStrategyAt(int index) {
 		return strategies.get(index);
 	}
-
 	public void removeStrategiesAt(int index) {
 		strategies.set(index, null);
 	}
-
-	public void setStrategies(List<Strategy> strat) {
-		strategies = strat;
-	}
-	
 	public void removeAllNull() {
 		for (int i = 0; i < strategies.size(); ++i) {
 			if (strategies.get(i) == null)
 				strategies.remove(i);
 		}
 	}
-
 	public void display() {
 		for (Strategy s : strategies) {
 			if (s == null)
