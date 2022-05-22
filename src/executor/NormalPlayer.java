@@ -5,56 +5,40 @@ import java.util.List;
 
 /**
  * @object A typical Normal Player is
- *
  * @attributes strategies List<Strategy>
  */
 public class NormalPlayer {
-	private List<Strategy> strategies;
+    private List<Strategy> strategies;
 
-	public NormalPlayer(List<Strategy> strategies) {
-		this.strategies = strategies;
-	}
+    public NormalPlayer(List<Strategy> strategies) {
+        this.strategies = strategies;
+    }
 
-	public int getBestResponse() {
-		int bestResponse = 0;
+    public List<Strategy> getStrategies() {
+        return strategies;
+    }
 
-		List<Double> payoffs = new ArrayList<>();
+    public Strategy getStrategyAt(int index) {
+        return strategies.get(index);
+    }
 
-		for (Strategy s : strategies) {
-			payoffs.add(s.getPayoff());
-		}
+    public void removeStrategiesAt(int index) {
+        strategies.set(index, null);
+    }
 
-		double max = strategies.get(0).getPayoff();
+    public void removeAllNull() {
+        for (int i = 0; i < strategies.size(); ++i) {
+            if (strategies.get(i) == null)
+                strategies.remove(i);
+        }
+    }
 
-		for (int i = 0; i < payoffs.size(); i++) {
-			if(payoffs.get(i) > max) {
-				bestResponse = i;
-			}
-		}
-
-		return bestResponse;
-	}
-	public Strategy getStrategyAt(int index) {
-		return strategies.get(index);
-	}
-	public void removeStrategiesAt(int index) {
-		strategies.set(index, null);
-	}
-	public void removeAllNull() {
-		for (int i = 0; i < strategies.size(); ++i) {
-			if (strategies.get(i) == null)
-				strategies.remove(i);
-		}
-	}
-	public void display() {
-		for (Strategy s : strategies) {
-			if (s == null)
-				continue;
-			System.out.println("Strategy " + (strategies.indexOf(s) + 1) + ":\t");
-			for (double p : s.getProperties()) {
-				System.out.print(p + ", ");
-			}
-			System.out.println();
-		}
-	}
+    public void display() {
+        for (Strategy s : strategies) {
+            if (s == null)
+                continue;
+            System.out.println("Strategy " + (strategies.indexOf(s) + 1) + ":\t");
+            System.out.println(s.toString() + "\nPayoff: " + s.getPayoff());
+        }
+    }
 }

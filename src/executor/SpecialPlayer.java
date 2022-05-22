@@ -5,71 +5,65 @@ import java.util.List;
 
 /**
  * @object A typical SpecialPlayer who doesn't directly interfere to the problem
- *
- * @attributes
- * 	numberOfProperties int
- * 	properties List<Double>
- * 	weights List<Double>
- * 	payoff double
+ * @attributes numberOfProperties int
+ * properties List<Double>
+ * weights List<Double>
+ * payoff double
  */
 public class SpecialPlayer {
-	private int numberOfProperties;
-	private List<Double> properties = new ArrayList<>();
-	private List<Double> weights = new ArrayList<>();
-	private double payoff;
+    private int numberOfProperties;
+    private List<Double> properties = new ArrayList<>();
+    private List<Double> weights = new ArrayList<>();
+    private double payoff;
 
-	public SpecialPlayer() {
-	}
+    public SpecialPlayer() {
+    }
 
-	/**
-	 *
-	 * @return properties size
-	 */
-	public int getNumberOfProperties() {
-		return numberOfProperties;
-	}
+    /**
+     * @return properties size
+     */
+    public int getNumberOfProperties() {
+        return numberOfProperties;
+    }
 
-	/**
-	 * @modifies properties
-	 * @effects add more property into properties
-	 */
-	public void addProperty(double property) {
-		properties.add(property);
-	}
+    /**
+     * @modifies properties
+     * @effects add more property into properties
+     */
+    public void addProperty(double property) {
+        properties.add(property);
+    }
 
-	/**
-	 * @modifies weight
-	 * @effects add more weight into weights
-	 */
-	public void addWeight(double weight) {
-		weights.add(weight);
-	}
+    /**
+     * @modifies weight
+     * @effects add more weight into weights
+     */
+    public void addWeight(double weight) {
+        weights.add(weight);
+    }
 
-	/**
-	 * @modifies properties
-	 * @effects set number of Properties
-	 */
-	public void setNumberOfProperties(int numberOfProperties) {
-		this.numberOfProperties = numberOfProperties;
-	}
+    /**
+     * @modifies properties
+     * @effects set number of Properties
+     */
+    public void setNumberOfProperties(int numberOfProperties) {
+        this.numberOfProperties = numberOfProperties;
+    }
 
-	public double getPayoff() {
-		return payoff;
-	}
+    public void setPayoff() {
+        double newPayoff = 0;
+        for (int i = 0; i < properties.size(); ++i) {
+            newPayoff += properties.get(i) * weights.get(i);
+        }
+        this.payoff = newPayoff;
+    }
 
-	public void setPayoff() {
-		double newPayoff = 0;
-		for (int i = 0; i < properties.size(); ++i) {
-			newPayoff += properties.get(i) * weights.get(i);
-		}
-		this.payoff = newPayoff;
-	}
-
-	public void displayInf() {
-		System.out.println("SPECIAL PLAYER: ");
-		System.out.println("Properties : ");
-		properties.forEach(x -> System.out.print(x + "\t"));
-		System.out.println("\n" + "Weight");
-		weights.forEach(x -> System.out.print(x + "\t"));
-	}
+    public void displayInf() {
+        System.out.println("SPECIAL PLAYER: ");
+        System.out.println("Properties : ");
+        properties.forEach(x -> System.out.print(x + "\t"));
+        System.out.println("\n" + "Weight");
+        weights.forEach(x -> System.out.print(x + "\t"));
+        System.out.println("Payoff: " + payoff);
+    }
 }
