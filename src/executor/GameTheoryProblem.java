@@ -40,6 +40,7 @@ package executor;
  */
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -109,7 +110,7 @@ public class GameTheoryProblem implements Problem {
         }
     }
 
-    // Compute intersection point between normalplayer vector && special player
+    // Compute intersection point between normal player vector && special player
     private double[] computeNashEquilibrium() {
         int numbeOfObjectives = normalPlayers.get(0).getStrategies().size();
         double[] nash = new double[numbeOfObjectives];
@@ -127,6 +128,26 @@ public class GameTheoryProblem implements Problem {
 
     public List<NormalPlayer> getNormalPlayers() {
         return normalPlayers;
+    }
+
+    public int getDominantPlayerIndex(){
+        int bestResponse = 0;
+
+        List<Double> payoffs = new ArrayList<>();
+
+        for (NormalPlayer p : normalPlayers) {
+            payoffs.add(p.getPurePayoff());
+        }
+
+        double max = normalPlayers.get(0).getPurePayoff();
+
+        for (int i = 0; i < payoffs.size(); i++) {
+            if (payoffs.get(i) > max) {
+                bestResponse = i;
+            }
+        }
+
+        return bestResponse;
     }
 
     @Override
@@ -164,7 +185,6 @@ public class GameTheoryProblem implements Problem {
                 payoffs[i] = normalPlayers.get(i).getBestResponse();
             }
         }
-
         solution.setObjectives(payoffs);
         solution.setConstraints(NashEquilibrium);
     }
