@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/NormalPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/NormalPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/NormalPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +141,7 @@
       <workItem from="1653124273308" duration="19218000" />
       <workItem from="1653191612783" duration="427000" />
       <workItem from="1653192054062" duration="8217000" />
-      <workItem from="1653228139735" duration="17138000" />
+      <workItem from="1653228139735" duration="17371000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -232,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653245380087</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Complete algorithm">
+      <created>1653247035384</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1653247035384</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +252,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="init InputDataDriver" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Update solutions" />
@@ -258,7 +261,8 @@
     <MESSAGE value="Update production classes" />
     <MESSAGE value="Update Algorithm" />
     <MESSAGE value="Add `getDominantPlayerIndex()` function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `getDominantPlayerIndex()` function" />
+    <MESSAGE value="Complete algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete algorithm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
