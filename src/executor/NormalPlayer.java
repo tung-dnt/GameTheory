@@ -66,7 +66,7 @@ public class NormalPlayer {
             if (s == null)
                 continue;
             System.out.println("Strategy " + (strategies.indexOf(s) + 1) + ":\t");
-            System.out.println(s.toString() + "\nPayoff: " + s.getPayoff());
+            System.out.println(s + "\nPayoff: " + s.getPayoff());
         }
     }
 }

@@ -21,23 +21,21 @@ import org.moeaframework.core.Solution;
 
 public class StorageExecution {
     private static void printResult(GameTheoryProblem object, NondominatedPopulation result) {
-        System.out.println("\nBEST RESPONSES");
-        for (int i = 0; i < result.size(); i++) {
-            List<NormalPlayer> players = object.getNormalPlayers();
+        System.out.println("\nNORMAL PLAYERS BEST RESPONSES\n");
+        List<NormalPlayer> players = object.getNormalPlayers();
 
-            Solution solution = result.get(i);
-            double[] objectives = solution.getObjectives();
+        Solution solution = result.get(0);
+        double[] objectives = solution.getObjectives();
 
-            for (int j = 0; j < objectives.length; ++j) {
-                // Get Best response of current player
-                NormalPlayer currentPlayer = players.get(j);
-                double payoff = currentPlayer.getStrategyAt((int) objectives[j]).getPayoff();
-                String strategy = currentPlayer.getStrategyAt((int) objectives[j]).toString();
+        for (int j = 0; j < objectives.length; ++j) {
+            // Get Best response of current player
+            NormalPlayer currentPlayer = players.get(j);
+            double payoff = currentPlayer.getStrategyAt((int) objectives[j]).getPayoff();
+            String strategy = currentPlayer.getStrategyAt((int) objectives[j]).toString();
 
-                System.out.printf("Normal Player %d - Strategy %d\n", j + 1, (int) objectives[j]);
-                System.out.printf("Profit: %d\n", (int) payoff);
-                System.out.printf("Properties of best strategy: %s\n\n", strategy);
-            }
+            System.out.printf("Normal Player %d - Strategy %d\n", j + 1, (int) objectives[j] + 1);
+            System.out.printf("Payoff: %f\n", payoff);
+            System.out.printf("Properties of best strategy: %s\n\n", strategy);
         }
     }
 

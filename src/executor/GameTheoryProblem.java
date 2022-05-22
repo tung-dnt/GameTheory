@@ -95,12 +95,13 @@ public class GameTheoryProblem implements Problem {
                 int leftConflictStrat = conflictSet.get(i).getLeftPlayerStrategy();
                 int rightConflictStrat = conflictSet.get(i).getRightPlayerStrategy();
 
+                // IF STRATEGY BELONG TO SPECIAL PLAYER -> DON'T REMOVE
                 // Set conflict strategy of right player to null
-                if (evaluatingLeftPlayer.getStrategyAt(leftConflictStrat) != null) {
+                if (evaluatingLeftPlayer.getStrategyAt(leftConflictStrat) != null && conflictSet.get(i).getLeftPlayer() > -1) {
                     evaluatingLeftPlayer.removeStrategiesAt(leftConflictStrat);
                 }
                 // Set conflict strategy of right player to null
-                if (evaluatingRightPlayer.getStrategyAt(rightConflictStrat) != null) {
+                if (evaluatingRightPlayer.getStrategyAt(rightConflictStrat) != null && conflictSet.get(i).getRightPlayer() > -1) {
                     evaluatingRightPlayer.removeStrategiesAt(rightConflictStrat);
                 }
             }
@@ -116,11 +117,10 @@ public class GameTheoryProblem implements Problem {
         double[] nash = new double[numbeOfObjectives];
 
         for (int i = 0; i < numbeOfObjectives; ++i) {
-            nash[i] = 0;
             if (specialPlayer == null) {
-
+                nash[i] = 0;
             } else {
-
+                nash[i] = normalPlayers.get(i).getBestResponse() - specialPlayer.getPayoff();
             }
         }
         return nash;
@@ -130,7 +130,7 @@ public class GameTheoryProblem implements Problem {
         return normalPlayers;
     }
 
-    public int getDominantPlayerIndex(){
+    public int getDominantPlayerIndex() {
         int bestResponse = 0;
 
         List<Double> payoffs = new ArrayList<>();

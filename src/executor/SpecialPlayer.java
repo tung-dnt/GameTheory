@@ -58,6 +58,10 @@ public class SpecialPlayer {
         this.payoff = newPayoff;
     }
 
+    public double getPayoff(){
+        return payoff;
+    }
+
     public void displayInf() {
         System.out.println("SPECIAL PLAYER: ");
         System.out.println("Properties : ");
