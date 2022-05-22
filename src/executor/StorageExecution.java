@@ -21,20 +21,22 @@ import org.moeaframework.core.Solution;
 
 public class StorageExecution {
     private static void printResult(GameTheoryProblem object, NondominatedPopulation result) {
-        System.out.println("\nBEST RESPONSES\n");
-
+        System.out.println("\nBEST RESPONSES");
         for (int i = 0; i < result.size(); i++) {
             List<NormalPlayer> players = object.getNormalPlayers();
+
             Solution solution = result.get(i);
             double[] objectives = solution.getObjectives();
 
             for (int j = 0; j < objectives.length; ++j) {
                 // Get Best response of current player
                 NormalPlayer currentPlayer = players.get(j);
-                Strategy strategy = currentPlayer.getStrategyAt(j);
-                if (strategy == null) continue;
-                System.out.printf("Player %d - Strategy %d\n", i + 1, j + 1);
-                System.out.printf("%s\nPayoff: %f", strategy.toString(), strategy.getPayoff());
+                double payoff = currentPlayer.getStrategyAt((int) objectives[j]).getPayoff();
+                String strategy = currentPlayer.getStrategyAt((int) objectives[j]).toString();
+
+                System.out.printf("Normal Player %d - Strategy %d\n", j + 1, (int) objectives[j]);
+                System.out.printf("Profit: %d\n", (int) payoff);
+                System.out.printf("Properties of best strategy: %s\n\n", strategy);
             }
         }
     }
@@ -44,10 +46,9 @@ public class StorageExecution {
         // solve using NSGA-II
         NondominatedPopulation result = new Executor()
                 .withProblem(object)
-                .withAlgorithm("NSGAII")
+                .withAlgorithm("GA")
                 .withMaxEvaluations(50000)
                 .distributeOnAllCores().run();
-        // print the results
         printResult(object, result);
     }
 }

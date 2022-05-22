@@ -1,5 +1,14 @@
 package executor;
 /* *
+ * STEPS TO FIND OUT THE BEST RESPONSE / NASH EQUILIBRIUM
+ * 1) Set up the game with `load()` method
+ * 2) Define each player's set of strategies with `loadNormalPlayersFromFile()`
+ * 3) Find and eliminate dominant strategies with `eliminateDominantStrategies()`
+ * 4) Find the pure strategy Nash Equilibria of the game
+ * 5) Find the mixed strategy Nash Equilibrium of the game
+ * */
+//--------------------------------------------------------------------------
+/* *
  * WARNING: DO NOT CHANGE ORDER OF GameTheoryProblem CONSTRUCTOR
  * PRECAUTION: THIS WOULD ONLY SOLVE PROBLEM FOR COORDINATING PROBLEMS
 
@@ -37,6 +46,7 @@ import java.util.Objects;
 import org.moeaframework.core.Problem;
 import org.moeaframework.core.Solution;
 import org.moeaframework.core.variable.EncodingUtils;
+import org.moeaframework.util.Vector;
 
 public class GameTheoryProblem implements Problem {
     private SpecialPlayer specialPlayer;
@@ -52,7 +62,6 @@ public class GameTheoryProblem implements Problem {
         }
         // Load user input data from .xlsx file
         load(path, startRow);
-
         eliminateConflictStrategies();
     }
 
@@ -100,12 +109,18 @@ public class GameTheoryProblem implements Problem {
         }
     }
 
-    private Double computeNashEquilibrium() {
-        double nash = 0;
-        if (specialPlayer == null) {
+    // Compute intersection point between normalplayer vector && special player
+    private double[] computeNashEquilibrium() {
+        int numbeOfObjectives = normalPlayers.get(0).getStrategies().size();
+        double[] nash = new double[numbeOfObjectives];
 
-        } else {
+        for (int i = 0; i < numbeOfObjectives; ++i) {
+            nash[i] = 0;
+            if (specialPlayer == null) {
 
+            } else {
+
+            }
         }
         return nash;
     }
@@ -138,39 +153,29 @@ public class GameTheoryProblem implements Problem {
         return conflictSet.size();
     }
 
-    // Get Strategy of player that return the highest Payoff
-    // Compare to Special Player payoff to get Nash Equilibrium if exist
     @Override
     public void evaluate(Solution solution) {
-//        double[] objectives = new double[normalPlayers.size()];
-//        for (int i = 0; i < objectives.length; ++i) {
-//            objectives[i] = normalPlayers.get(i).getBestResponse();
-//        }
-//        solution.setObjectives((objectives));
         boolean[] areObjectivesExist = EncodingUtils.getBinary(solution.getVariable(0));
-        double[] NashEquilibrium = {computeNashEquilibrium()};
+        double[] NashEquilibrium = computeNashEquilibrium();
         double[] payoffs = new double[solution.getNumberOfObjectives()];
 
         for (int i = 0; i < normalPlayers.size(); ++i) {
             if (areObjectivesExist[i]) {
-                List<Strategy> playerStrategies = normalPlayers.get(i).getStrategies();
-                for (int j = 0; j < playerStrategies.size(); ++j) {
-                    payoffs[j] = playerStrategies.get(j).getPayoff();
-                }
+                payoffs[i] = normalPlayers.get(i).getBestResponse();
             }
         }
 
         solution.setObjectives(payoffs);
         solution.setConstraints(NashEquilibrium);
     }
-    // SOLUTION -> VARIABLE -> OBJECTIVE || CONSTRAINT
+
+    // SOLUTION = VARIABLE -> OBJECTIVE || CONSTRAINT
     @Override
     public Solution newSolution() {
         //Number of strategies each player
-        int numbeOfObjectives = normalPlayers.get(0).getStrategies().size();
-
-        Solution solution = new Solution(1, numbeOfObjectives, 1);
-        solution.setVariable(0, EncodingUtils.newBinary(normalPlayers.size()));
+        int numbeOfNP = normalPlayers.size();
+        Solution solution = new Solution(1, numbeOfNP, 1);
+        solution.setVariable(0, EncodingUtils.newBinary(numbeOfNP));
         return solution;
     }
 
