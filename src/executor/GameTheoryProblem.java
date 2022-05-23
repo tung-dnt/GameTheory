@@ -121,6 +121,15 @@ public class GameTheoryProblem implements Problem {
         return playerAvgDiffs.indexOf(Collections.min(playerAvgDiffs));
     }
 
+    public String toString() {
+        String gameString = "";
+        for (NormalPlayer normalPlayer : normalPlayers) {
+            gameString += "Normal player: " + (normalPlayers.indexOf(normalPlayer) + 1) + normalPlayer;
+            gameString += "\n----------------\n";
+        }
+        return gameString;
+    }
+
     @Override
     public String getName() {
         // TODO Auto-generated method stub

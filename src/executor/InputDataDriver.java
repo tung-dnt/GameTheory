@@ -30,7 +30,7 @@ public class InputDataDriver {
 		List<Conflict> conflictSet = new ArrayList<>();
 
 		if (isRowEmpty(row)) {
-			System.out.println("No Conflict Set");
+			System.out.println("NO CONFLICT SET");
 			return null;
 		}
 		while (!isRowEmpty(row)) {
@@ -156,14 +156,5 @@ public class InputDataDriver {
 		}
 		file.close();
 		return true;
-	}
-
-	public static void displayNormalPlayerList(List<NormalPlayer> normalPlayerList) {
-		System.out.println();
-		for (NormalPlayer normalPlayer : normalPlayerList) {
-			System.out.println("Normal player : " + (normalPlayerList.indexOf(normalPlayer) + 1));
-			normalPlayer.display();
-			System.out.println("---------------");
-		}
 	}
 }

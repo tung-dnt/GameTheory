@@ -3,13 +3,6 @@ package executor;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @object A typical SpecialPlayer who doesn't directly interfere to the problem
- * @attributes numberOfProperties int
- * properties List<Double>
- * weights List<Double>
- * payoff double
- */
 public class SpecialPlayer {
     private int numberOfProperties;
     private List<Double> properties = new ArrayList<>();
