@@ -20,25 +20,23 @@ import org.moeaframework.core.NondominatedPopulation;
 
 public class StorageExecution {
     public static void main(String[] args) throws IOException {
-        GameTheoryProblem object = new GameTheoryProblem("TrafficControl.xlsx", 17);
+        GameTheoryProblem problem = new GameTheoryProblem("TrafficControl.xlsx", 17);
         // solve using NSGA-II
-        NondominatedPopulation result = new Executor()
-                .withProblem(object)
-                .withAlgorithm("GA")
-                .withMaxEvaluations(50000)
-                .distributeOnAllCores().run();
-//        printGametheoryInstances(object);
-        printEquilibriaStrategy(object, result);
+        NondominatedPopulation result = new Executor().withProblem(problem).withAlgorithm("NSGAII").withMaxEvaluations(50000).distributeOnAllCores().run();
+
+//        printGameTheoryInstances(object);
+        printDominantStrategy(problem, result);
+        printEquilibriaStrategy(problem, result);
     }
 
-    private static void printGametheoryInstances(GameTheoryProblem object) {
-        List<NormalPlayer> players = object.getNormalPlayers();
+    private static void printGameTheoryInstances(GameTheoryProblem problem) {
+        List<NormalPlayer> players = problem.getNormalPlayers();
         InputDataDriver.displayNormalPlayerList(players);
     }
 
-    private static void printDominantStrategy(GameTheoryProblem object, NondominatedPopulation result) {
-        List<NormalPlayer> players = object.getNormalPlayers();
-        int outstandingPlayerIndex = object.getDominantPlayerIndex();
+    private static void printDominantStrategy(GameTheoryProblem problem, NondominatedPopulation result) {
+        List<NormalPlayer> players = problem.getNormalPlayers();
+        int outstandingPlayerIndex = problem.getDominantPlayerIndex();
         NormalPlayer outstandingPlayer = players.get(outstandingPlayerIndex);
         int bestRes = outstandingPlayer.getBestResponse();
 
@@ -48,19 +46,18 @@ public class StorageExecution {
         System.out.printf("Properties of best strategy: %s\n\n", outstandingPlayer.getStrategyAt(bestRes));
     }
 
-    private static void printEquilibriaStrategy(GameTheoryProblem object, NondominatedPopulation result) {
-        List<NormalPlayer> players = object.getNormalPlayers();
-        List<Integer> equiPlayerIndex = object.getNashEquiPlayerIndex();
+    private static void printEquilibriaStrategy(GameTheoryProblem problem, NondominatedPopulation result) {
+        List<NormalPlayer> players = problem.getNormalPlayers();
+        int equiPlayerIndex = problem.getNashEquiPlayerIndex();
 
-        for (int i = 0; i < equiPlayerIndex.size(); ++i) {
-            int playerIndex = equiPlayerIndex.get(i);
-            NormalPlayer player = players.get(playerIndex);
-            int bestRes = player.getBestResponse();
-            System.out.printf("==================================\nSolution :%d\n", i+1);
-            System.out.printf("Normal Player %d - Strategy %d\n", playerIndex + 1, bestRes + 1);
-            System.out.printf("Payoff: %f\n", player.getStrategyAt(bestRes).getPayoff());
-            System.out.printf("Properties of best strategy: %s\n\n", player.getStrategyAt(bestRes));
-        }
+        NormalPlayer player = players.get(equiPlayerIndex);
+        int bestRes = player.getBestResponse();
+
+        System.out.printf("==================================\nMOST EQUILIBRIUM PLAYER:\nSolution: %d\n", equiPlayerIndex + 1);
+        System.out.printf("Normal Player %d - Strategy %d\n", equiPlayerIndex + 1, bestRes + 1);
+        System.out.printf("Payoff: %f\n", player.getStrategyAt(bestRes).getPayoff());
+        System.out.printf("Properties of best strategy: %s\n\n", player.getStrategyAt(bestRes));
     }
+
 
 }
