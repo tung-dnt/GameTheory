@@ -21,9 +21,11 @@ import org.moeaframework.core.Solution;
 
 public class StorageExecution {
     private static void printResult(GameTheoryProblem object, NondominatedPopulation result) {
-        System.out.println("\nNORMAL PLAYERS BEST RESPONSES\n");
+        System.out.println("\nNORMAL PLAYERS BEST RESPONSES");
         List<NormalPlayer> players = object.getNormalPlayers();
-
+        int outstandingPlayerIndex = object.getDominantPlayerIndex();
+        NormalPlayer outstandingPlayer = players.get(outstandingPlayerIndex);
+        int bestRes = outstandingPlayer.getBestResponse();
         Solution solution = result.get(0);
         double[] objectives = solution.getObjectives();
 
@@ -37,6 +39,11 @@ public class StorageExecution {
             System.out.printf("Payoff: %f\n", payoff);
             System.out.printf("Properties of best strategy: %s\n\n", strategy);
         }
+
+        System.out.println("==================================\nBest Solution:");
+        System.out.printf("Normal Player %d - Strategy %d\n", outstandingPlayerIndex + 1, bestRes + 1);
+        System.out.printf("Payoff: %f\n", outstandingPlayer.getStrategyAt(bestRes).getPayoff());
+        System.out.printf("Properties of best strategy: %s\n\n", outstandingPlayer.getStrategyAt(bestRes));
     }
 
     public static void main(String[] args) throws IOException {
