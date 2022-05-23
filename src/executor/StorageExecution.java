@@ -17,35 +17,8 @@ import java.util.List;
 
 import org.moeaframework.Executor;
 import org.moeaframework.core.NondominatedPopulation;
-import org.moeaframework.core.Solution;
 
 public class StorageExecution {
-    private static void printResult(GameTheoryProblem object, NondominatedPopulation result) {
-        System.out.println("\nNORMAL PLAYERS BEST RESPONSES");
-        List<NormalPlayer> players = object.getNormalPlayers();
-        int outstandingPlayerIndex = object.getDominantPlayerIndex();
-        NormalPlayer outstandingPlayer = players.get(outstandingPlayerIndex);
-        int bestRes = outstandingPlayer.getBestResponse();
-        Solution solution = result.get(0);
-        double[] objectives = solution.getObjectives();
-
-        for (int j = 0; j < objectives.length; ++j) {
-            // Get Best response of current player
-            NormalPlayer currentPlayer = players.get(j);
-            double payoff = currentPlayer.getStrategyAt((int) objectives[j]).getPayoff();
-            String strategy = currentPlayer.getStrategyAt((int) objectives[j]).toString();
-
-            System.out.printf("Normal Player %d - Strategy %d\n", j + 1, (int) objectives[j] + 1);
-            System.out.printf("Payoff: %f\n", payoff);
-            System.out.printf("Properties of best strategy: %s\n\n", strategy);
-        }
-
-        System.out.println("==================================\nBest Solution:");
-        System.out.printf("Normal Player %d - Strategy %d\n", outstandingPlayerIndex + 1, bestRes + 1);
-        System.out.printf("Payoff: %f\n", outstandingPlayer.getStrategyAt(bestRes).getPayoff());
-        System.out.printf("Properties of best strategy: %s\n\n", outstandingPlayer.getStrategyAt(bestRes));
-    }
-
     public static void main(String[] args) throws IOException {
         GameTheoryProblem object = new GameTheoryProblem("TrafficControl.xlsx", 17);
         // solve using NSGA-II
@@ -54,6 +27,40 @@ public class StorageExecution {
                 .withAlgorithm("GA")
                 .withMaxEvaluations(50000)
                 .distributeOnAllCores().run();
-        printResult(object, result);
+//        printGametheoryInstances(object);
+        printEquilibriaStrategy(object, result);
     }
+
+    private static void printGametheoryInstances(GameTheoryProblem object) {
+        List<NormalPlayer> players = object.getNormalPlayers();
+        InputDataDriver.displayNormalPlayerList(players);
+    }
+
+    private static void printDominantStrategy(GameTheoryProblem object, NondominatedPopulation result) {
+        List<NormalPlayer> players = object.getNormalPlayers();
+        int outstandingPlayerIndex = object.getDominantPlayerIndex();
+        NormalPlayer outstandingPlayer = players.get(outstandingPlayerIndex);
+        int bestRes = outstandingPlayer.getBestResponse();
+
+        System.out.println("==================================\nBest Solution:");
+        System.out.printf("Normal Player %d - Strategy %d\n", outstandingPlayerIndex + 1, bestRes + 1);
+        System.out.printf("Payoff: %f\n", outstandingPlayer.getStrategyAt(bestRes).getPayoff());
+        System.out.printf("Properties of best strategy: %s\n\n", outstandingPlayer.getStrategyAt(bestRes));
+    }
+
+    private static void printEquilibriaStrategy(GameTheoryProblem object, NondominatedPopulation result) {
+        List<NormalPlayer> players = object.getNormalPlayers();
+        List<Integer> equiPlayerIndex = object.getNashEquiPlayerIndex();
+
+        for (int i = 0; i < equiPlayerIndex.size(); ++i) {
+            int playerIndex = equiPlayerIndex.get(i);
+            NormalPlayer player = players.get(playerIndex);
+            int bestRes = player.getBestResponse();
+            System.out.printf("==================================\nSolution :%d\n", i+1);
+            System.out.printf("Normal Player %d - Strategy %d\n", playerIndex + 1, bestRes + 1);
+            System.out.printf("Payoff: %f\n", player.getStrategyAt(bestRes).getPayoff());
+            System.out.printf("Properties of best strategy: %s\n\n", player.getStrategyAt(bestRes));
+        }
+    }
+
 }
