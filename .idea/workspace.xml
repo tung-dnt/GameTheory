@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="Add class documents">
+    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrafficControl.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TrafficControl.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
@@ -27,6 +28,21 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/executor/Conflict.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/GameTheoryProblem.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/GameTheoryProblem.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/InputDataDriver.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/InputDataDriver.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/NormalPlayer.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/NormalPlayer.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/SpecialPlayer.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/SpecialPlayer.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/StorageExecution.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/StorageExecution.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/Strategy.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/executor/Strategy.txt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -145,7 +161,7 @@
       <workItem from="1653192054062" duration="8217000" />
       <workItem from="1653228139735" duration="17544000" />
       <workItem from="1653271881150" duration="1757000" />
-      <workItem from="1653293110321" duration="3058000" />
+      <workItem from="1653293110321" duration="11671000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -245,7 +261,35 @@
       <option name="project" value="LOCAL" />
       <updated>1653247358204</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Build runtime environment">
+      <created>1653296216250</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1653296216250</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update Result Printer">
+      <created>1653296252550</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653296252550</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update `computeNashEquilibrium()` algorithm">
+      <created>1653296303558</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653296303558</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update Best Response Printer">
+      <created>1653296315373</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1653296315373</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +318,11 @@
     <MESSAGE value="Add `getDominantPlayerIndex()` function" />
     <MESSAGE value="Complete algorithm" />
     <MESSAGE value="Add class documents" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add class documents" />
+    <MESSAGE value="Build runtime environment" />
+    <MESSAGE value="Update Result Printer" />
+    <MESSAGE value="Update `computeNashEquilibrium()` algorithm" />
+    <MESSAGE value="Update Best Response Printer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Best Response Printer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
