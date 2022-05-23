@@ -13,7 +13,8 @@ public class GameTheoryProblem implements Problem {
     private SpecialPlayer specialPlayer;
     private List<NormalPlayer> normalPlayers;
     private List<Conflict> conflictSet;
-    private List<Double> normalPlayerWeights;
+    //Store average pure payoff diff in descending order
+    private List<Double> playerAvgDiffs;
 
     public GameTheoryProblem(String path, int startRow) throws IOException {
         super();
@@ -40,11 +41,9 @@ public class GameTheoryProblem implements Problem {
             specialPlayer.displayInf();
         }
 
-        normalPlayerWeights = driver.loadNormalPlayerWeights(NORMAL_PLAYER_START_ROW);
+        List<Double> normalPlayerWeights = driver.loadNormalPlayerWeights(NORMAL_PLAYER_START_ROW);
         normalPlayers = driver.loadNormalPlayersFromFile(NORMAL_PLAYER_START_ROW, normalPlayerWeights);
         conflictSet = driver.loadConflictSetFromFile(CONFLICT_SET_START_ROW);
-
-        InputDataDriver.displayNormalPlayerList(normalPlayers);
     }
 
     private void eliminateConflictStrategies() {
@@ -71,21 +70,27 @@ public class GameTheoryProblem implements Problem {
         }
     }
 
-    // Compute intersection point between normal player vector && special player
     private double computeNashEquilibrium() {
-        double averageDiff = 0;
-
-        List<Double> playerPurePayoffs = new ArrayList<>();
+        double nash;
+        List<Double> playerAvgDiffs = new ArrayList<>();
         //Set payoff for every normal player
         for (NormalPlayer player : normalPlayers) {
-            playerPurePayoffs.add(player.getPurePayoff());
-        }
-        double min = Collections.min(playerPurePayoffs);
-        double max = Collections.max(playerPurePayoffs);
-        averageDiff = (max - min) / playerPurePayoffs.size();
+            double playerAvgDiff = 0;
+            for (NormalPlayer opponent : normalPlayers) {
+                playerAvgDiff += Math.abs(player.getPurePayoff() - opponent.getPurePayoff());
+            }
+            playerAvgDiff /= normalPlayers.size();//529
+            playerAvgDiffs.add(playerAvgDiff);
 
-        if(normalPlayers != null) averageDiff = Math.abs(averageDiff - specialPlayer.getPayoff());
-        return averageDiff;
+        }
+        nash = Collections.min(playerAvgDiffs);
+
+        if (specialPlayer != null) {
+            nash = Math.abs(nash - specialPlayer.getPayoff());
+        }
+        this.playerAvgDiffs = playerAvgDiffs;
+
+        return nash;
     }
 
     public List<NormalPlayer> getNormalPlayers() {
@@ -94,7 +99,6 @@ public class GameTheoryProblem implements Problem {
 
     public int getDominantPlayerIndex() {
         int bestResponse = 0;
-
         List<Double> payoffs = new ArrayList<>();
 
         for (NormalPlayer p : normalPlayers) {
@@ -107,9 +111,14 @@ public class GameTheoryProblem implements Problem {
             if (payoffs.get(i) > max) {
                 bestResponse = i;
             }
+            max = normalPlayers.get(i).getPurePayoff();
         }
-
         return bestResponse;
+    }
+
+    public int getNashEquiPlayerIndex() {
+        computeNashEquilibrium();
+        return playerAvgDiffs.indexOf(Collections.min(playerAvgDiffs));
     }
 
     @Override
