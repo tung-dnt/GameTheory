@@ -3,9 +3,7 @@ package executor;
 //DOCUMENT: GameTheoryProblem.txt
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 import org.moeaframework.core.Problem;
 import org.moeaframework.core.Solution;
@@ -51,19 +49,19 @@ public class GameTheoryProblem implements Problem {
 
     private void eliminateConflictStrategies() {
         if (conflictSet != null) {
-            for (int i = 0; i < conflictSet.size(); ++i) {
-                NormalPlayer evaluatingLeftPlayer = normalPlayers.get(conflictSet.get(i).getLeftPlayer());
-                NormalPlayer evaluatingRightPlayer = normalPlayers.get(conflictSet.get(i).getRightPlayer());
-                int leftConflictStrat = conflictSet.get(i).getLeftPlayerStrategy();
-                int rightConflictStrat = conflictSet.get(i).getRightPlayerStrategy();
+            for (Conflict conflict : conflictSet) {
+                NormalPlayer evaluatingLeftPlayer = normalPlayers.get(conflict.getLeftPlayer());
+                NormalPlayer evaluatingRightPlayer = normalPlayers.get(conflict.getRightPlayer());
+                int leftConflictStrat = conflict.getLeftPlayerStrategy();
+                int rightConflictStrat = conflict.getRightPlayerStrategy();
 
                 // IF STRATEGY BELONG TO SPECIAL PLAYER -> DON'T REMOVE
                 // Set conflict strategy of right player to null
-                if (evaluatingLeftPlayer.getStrategyAt(leftConflictStrat) != null && conflictSet.get(i).getLeftPlayer() > -1) {
+                if (evaluatingLeftPlayer.getStrategyAt(leftConflictStrat) != null && conflict.getLeftPlayer() > -1) {
                     evaluatingLeftPlayer.removeStrategiesAt(leftConflictStrat);
                 }
                 // Set conflict strategy of right player to null
-                if (evaluatingRightPlayer.getStrategyAt(rightConflictStrat) != null && conflictSet.get(i).getRightPlayer() > -1) {
+                if (evaluatingRightPlayer.getStrategyAt(rightConflictStrat) != null && conflict.getRightPlayer() > -1) {
                     evaluatingRightPlayer.removeStrategiesAt(rightConflictStrat);
                 }
             }
@@ -74,18 +72,20 @@ public class GameTheoryProblem implements Problem {
     }
 
     // Compute intersection point between normal player vector && special player
-    private double[] computeNashEquilibrium() {
-        int numbeOfObjectives = normalPlayers.get(0).getStrategies().size();
-        double[] nash = new double[numbeOfObjectives];
+    private double computeNashEquilibrium() {
+        double averageDiff = 0;
 
-        for (int i = 0; i < numbeOfObjectives; ++i) {
-            if (specialPlayer == null) {
-                nash[i] = 0;
-            } else {
-                nash[i] = normalPlayers.get(i).getBestResponse() - specialPlayer.getPayoff();
-            }
+        List<Double> playerPurePayoffs = new ArrayList<>();
+        //Set payoff for every normal player
+        for (NormalPlayer player : normalPlayers) {
+            playerPurePayoffs.add(player.getPurePayoff());
         }
-        return nash;
+        double min = Collections.min(playerPurePayoffs);
+        double max = Collections.max(playerPurePayoffs);
+        averageDiff = (max - min) / playerPurePayoffs.size();
+
+        if(normalPlayers != null) averageDiff = Math.abs(averageDiff - specialPlayer.getPayoff());
+        return averageDiff;
     }
 
     public List<NormalPlayer> getNormalPlayers() {
@@ -139,7 +139,7 @@ public class GameTheoryProblem implements Problem {
     @Override
     public void evaluate(Solution solution) {
         boolean[] areObjectivesExist = EncodingUtils.getBinary(solution.getVariable(0));
-        double[] NashEquilibrium = computeNashEquilibrium();
+        double[] NashEquilibrium = {computeNashEquilibrium()};
         double[] payoffs = new double[solution.getNumberOfObjectives()];
 
         for (int i = 0; i < normalPlayers.size(); ++i) {
