@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.txt" afterDir="false" />
+    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="Add class documents">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,24 +36,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tung-dnt/Documents/FIT/GameTheory&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/tung-dnt/Documents/FIT/GameTheory",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/executor" />
@@ -141,7 +143,9 @@
       <workItem from="1653124273308" duration="19218000" />
       <workItem from="1653191612783" duration="427000" />
       <workItem from="1653192054062" duration="8217000" />
-      <workItem from="1653228139735" duration="17371000" />
+      <workItem from="1653228139735" duration="17544000" />
+      <workItem from="1653271881150" duration="1757000" />
+      <workItem from="1653293110321" duration="3058000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -234,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653247035384</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add class documents">
+      <created>1653247358204</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1653247358204</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +273,8 @@
     <MESSAGE value="Update Algorithm" />
     <MESSAGE value="Add `getDominantPlayerIndex()` function" />
     <MESSAGE value="Complete algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete algorithm" />
+    <MESSAGE value="Add class documents" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add class documents" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
