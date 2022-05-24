@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="Complete Printer">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/NormalPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/NormalPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/InputDataDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/InputDataDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/NormalPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/NormalPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +26,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/executor/Conflict.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/executor/GameTheoryProblem.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/executor/GameTheoryProblem.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/executor/InputDataDriver.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/executor/InputDataDriver.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/executor/NormalPlayer.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/executor/NormalPlayer.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/executor/SpecialPlayer.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/executor/SpecialPlayer.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/executor/StorageExecution.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/executor/StorageExecution.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/executor/Strategy.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/executor/Strategy.txt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/tung-dnt/Documents/FIT/GameTheory",
+    "last_opened_file_path": "/home/tung-dnt/Documents/React+/ma_navi",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -166,7 +151,7 @@
       <workItem from="1653192054062" duration="8217000" />
       <workItem from="1653228139735" duration="17544000" />
       <workItem from="1653271881150" duration="1757000" />
-      <workItem from="1653293110321" duration="16694000" />
+      <workItem from="1653293110321" duration="20519000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -329,7 +314,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653316440000</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Refactor">
+      <created>1653318464395</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1653318464395</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Update Documents">
+      <created>1653358737964</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1653358737964</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +348,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="init InputDataDriver" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Update solutions" />
     <MESSAGE value="Refactor printer" />
     <MESSAGE value="Refactor, Update Solution algorithm" />
@@ -366,7 +364,9 @@
     <MESSAGE value="Update WorkSpace" />
     <MESSAGE value="Complete Nash Equilibrium Algorithm" />
     <MESSAGE value="Complete Printer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete Printer" />
+    <MESSAGE value="Refactor" />
+    <MESSAGE value="Update Documents" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Documents" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

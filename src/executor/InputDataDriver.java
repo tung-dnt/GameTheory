@@ -1,4 +1,7 @@
 package executor;
+/* *
+	A simple class to handle extracting input from .xlsx files
+ * */
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
