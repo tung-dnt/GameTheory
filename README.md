@@ -27,8 +27,12 @@ biology.
 **Players**: who are the decision makers?
 - People? Governments? Companies? Somebody employed by a Company?...
 
-**Actions**: what can the players do?
+**Strategies**: what can the players do?
 - Enter a bid in an auction? Decide whether to end a strike? Decide when to sell a stock? Decide how to vote?...
+
+**Properties**: attributes make up a strategy
+
+**Weights**: a unit to evaluate efficiency of a property
 
 **Payoffs**: what motivates players?
 - Do they care about some profit? Do they care about other players?...

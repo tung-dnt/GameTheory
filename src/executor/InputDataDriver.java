@@ -112,7 +112,7 @@ public class InputDataDriver {
 		}
 		return new NormalPlayer(strategies);
 	}
-
+	//READ VALUE OF A CELL
 	public Double getValueOfCoordinate(int rowIndex, int columnIndex) throws IOException {
 		DataFormatter formatter = new DataFormatter();
 		Row row = sheet.getRow(rowIndex);
@@ -125,7 +125,7 @@ public class InputDataDriver {
 		file.close();
 		return Double.parseDouble(formatter.formatCellValue(cell));
 	}
-
+	//READ STRING OF A CELL
 	public String getStringOfCoordinate(int rowIndex, int columnIndex) throws IOException {
 		Row row = sheet.getRow(rowIndex);
 		Cell cell = row.getCell(columnIndex);
