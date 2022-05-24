@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Strategy {
-	private List<Double> properties = new ArrayList<>();
+	private final List<Double> properties = new ArrayList<>();
 	private double payoff;
 
 	public List<Double> getProperties() {
@@ -23,19 +23,15 @@ public class Strategy {
 		this.payoff = newPayoff;
 	}
 
-	public double getPropertyAt(int index) {
-		return properties.get(index);
-	}
-
 	public void addProperty(double property) {
 		properties.add(property);
 	}
 
 	@Override
 	public String toString() {
-		String props = "[ ";
+		StringBuilder props = new StringBuilder("[ ");
 		for (double prop : properties) {
-			props += prop + ", ";
+			props.append(prop).append(", ");
 		}
 		return props.substring(0, props.length() - 2) + " ]";
 	}

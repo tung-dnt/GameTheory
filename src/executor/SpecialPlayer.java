@@ -5,8 +5,8 @@ import java.util.List;
 
 public class SpecialPlayer {
     private int numberOfProperties;
-    private List<Double> properties = new ArrayList<>();
-    private List<Double> weights = new ArrayList<>();
+    private final List<Double> properties = new ArrayList<>();
+    private final List<Double> weights = new ArrayList<>();
     private double payoff;
 
     public SpecialPlayer() {
@@ -51,16 +51,19 @@ public class SpecialPlayer {
         this.payoff = newPayoff;
     }
 
-    public double getPayoff(){
+    public double getPayoff() {
         return payoff;
     }
 
-    public void displayInf() {
-        System.out.println("SPECIAL PLAYER: ");
-        System.out.println("Properties : ");
-        properties.forEach(x -> System.out.print(x + "\t"));
-        System.out.println("\n" + "Weight");
-        weights.forEach(x -> System.out.print(x + "\t"));
-        System.out.println("Payoff: " + payoff);
+    public String toString() {
+        StringBuilder SP = new StringBuilder("SPECIAL PLAYER: \nProperties: \n");
+        for (Double x : properties) {
+            SP.append(x).append("\t");
+        }
+        SP.append("\nWeight");
+        for (Double x : weights) {
+            SP.append(x).append("\t");
+        }
+        return SP + "Payoff: " + payoff;
     }
 }

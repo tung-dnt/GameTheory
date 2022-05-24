@@ -82,7 +82,7 @@ public class GameTheoryProblem implements Problem {
         // Load Special Player
         if (isSpecialPlayerExist) {
             specialPlayer = driver.loadSpecialPlayerFromFile(startRow);
-            specialPlayer.displayInf();
+            System.out.println(specialPlayer);
         }
 
         List<Double> normalPlayerWeights = driver.loadNormalPlayerWeights(NORMAL_PLAYER_START_ROW);
@@ -173,7 +173,7 @@ public class GameTheoryProblem implements Problem {
      * @usage Get user with best response strategy
      * ----> The lower payoff average difference, the more equilibrium strategy is
      */
-    public int getNashEquiPlayerIndex() {
+    public int getBestResponse() {
         computeNashEquilibrium();
         return playerAvgDiffs.indexOf(Collections.min(playerAvgDiffs));
     }
@@ -189,7 +189,7 @@ public class GameTheoryProblem implements Problem {
 
         for (int i = 0; i < normalPlayers.size(); ++i) {
             if (areObjectivesExist[i]) {
-                payoffs[i] = normalPlayers.get(i).getBestResponse();
+                payoffs[i] = normalPlayers.get(i).getDominantStrategyIndex();
             }
         }
         solution.setObjectives(payoffs);
@@ -207,12 +207,12 @@ public class GameTheoryProblem implements Problem {
     }
 
     public String toString() {
-        String gameString = "";
+        StringBuilder gameString = new StringBuilder();
         for (NormalPlayer normalPlayer : normalPlayers) {
-            gameString += "Normal player: " + (normalPlayers.indexOf(normalPlayer) + 1) + normalPlayer;
-            gameString += "\n----------------\n";
+            gameString.append("Normal player: ").append(normalPlayers.indexOf(normalPlayer) + 1).append(normalPlayer);
+            gameString.append("\n----------------\n");
         }
-        return gameString;
+        return gameString.toString();
     }
 
     @Override

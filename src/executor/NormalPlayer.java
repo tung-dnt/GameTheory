@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NormalPlayer {
-    private List<Strategy> strategies;
+    private final List<Strategy> strategies;
 
     public NormalPlayer(List<Strategy> strategies) {
         this.strategies = strategies;
@@ -25,7 +25,7 @@ public class NormalPlayer {
         }
     }
 
-    public int getBestResponse() {
+    public int getDominantStrategyIndex() {
         int bestResponse = 0;
 
         List<Double> payoffs = new ArrayList<>();
@@ -54,13 +54,13 @@ public class NormalPlayer {
     }
 
     public String toString() {
-        String NP = "";
+        StringBuilder NP = new StringBuilder();
         for (Strategy s : strategies) {
             if (s == null)
                 continue;
-            NP += "\nStrategy " + (strategies.indexOf(s) + 1) + ":\t";
-            NP += s + "\nPayoff: " + s.getPayoff();
+            NP.append("\nStrategy ").append(strategies.indexOf(s) + 1).append(":\t");
+            NP.append(s).append("\nPayoff: ").append(s.getPayoff());
         }
-        return NP;
+        return NP.toString();
     }
 }
