@@ -10,7 +10,7 @@ biology.
 - [Game Representations](#game-representations)
 - [Classification of Games](#classification-of-games)
 - [Nash Equilibrium](#nash-equilibrium)
-- [Social Choice](#social-choice)
+- [Problem Description](#problem-description)
 
 ---
 
@@ -157,31 +157,6 @@ a smaller payoff than some other strategy.
 - Weakly Dominated Strategy - a strategy, such that, regardless of what any other players do, the strategy earns a
   player a smaller than or equal to some other strategy payoff.
 
-### Social Choice
-
-**Social Choice Function** - a function that, given a set of linear orderings on the outcomes, tells which
-outcome should be chosen.
-
-**Social Welfare Function** - a function that, given a set of linear orderings on the outcomes, tells which
-ordering should be chosen.
-
-**Voting Schemes**:
-- **Plurality** - pick the outcome which is most preferred by the most people
-- **Cumulative voting**
-    - distribute e.g., 5 votes each
-    - possible to vote for the same outcome multiple times
-- **Approval voting** - vote for as many outcomes as you "like" (used e.g. in electing new members into a club or society)
-- **Plurality with elimination** ("instant runoff", "transferable voting")
-    - if some outcome has a majority, it is the winner
-    - otherwise, the outcome with the fewest votes is eliminated (may need some tie-breaking procedure)
-    - repeat until there is a winner.
-- **Borda Rule**, **Borda Count**
-    - assign each outcome a number.
-    - the most preferred outcome gets a score of `n - 1`, the next most preferred gets `n - 2`, down to the `n`th
-      outcome which gets 0.
-    - sum scores for each outcome, and choose one with highest score.
-- **Successive elimination**
-    - in advance, decide an ordering of alternatives
-    - everyone votes for the first or second, and the loser is eliminated.
+### Problem Description
 
 ---
