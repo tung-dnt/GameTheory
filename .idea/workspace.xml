@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input/HumanResources.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input/InputSample.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input/OilManagement.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrafficControl.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/TrafficControl.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/NormalPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/NormalPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/SpecialPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/SpecialPlayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/Strategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/Strategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/InputDataDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/InputDataDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/NormalPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/NormalPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +46,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2607vYViQR21E0Xu94y8E3Txs2K" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,6 +74,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/input" />
       <recent name="$PROJECT_DIR$/src/executor" />
     </key>
   </component>
@@ -162,7 +165,10 @@
       <workItem from="1653228139735" duration="17544000" />
       <workItem from="1653271881150" duration="1757000" />
       <workItem from="1653293110321" duration="20519000" />
-      <workItem from="1653373086899" duration="3161000" />
+      <workItem from="1653373086899" duration="5284000" />
+      <workItem from="1653385300913" duration="350000" />
+      <workItem from="1653385939915" duration="17000" />
+      <workItem from="1653470292837" duration="6972000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -353,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653367939647</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Refactor">
+      <created>1653376469014</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1653376469014</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,10 +402,10 @@
     <MESSAGE value="Update WorkSpace" />
     <MESSAGE value="Complete Nash Equilibrium Algorithm" />
     <MESSAGE value="Complete Printer" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Update Documents" />
     <MESSAGE value="Upload Game declaration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload Game declaration" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
