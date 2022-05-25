@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/input/HumanResources.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/InputSample.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/OilManagement.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrafficControl.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/TrafficControl.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/Strategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/Strategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/InputSample.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/InputSample.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/OilManagement.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/OilManagement.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/TrafficControl.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/TrafficControl.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +164,7 @@
       <workItem from="1653373086899" duration="5284000" />
       <workItem from="1653385300913" duration="350000" />
       <workItem from="1653385939915" duration="17000" />
-      <workItem from="1653470292837" duration="6972000" />
+      <workItem from="1653470292837" duration="10139000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -366,7 +362,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653376469014</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Update Input Handler">
+      <created>1653493122977</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1653493122977</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update Docs">
+      <created>1653493133941</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1653493133941</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update Refactor">
+      <created>1653493143026</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1653493143026</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +422,10 @@
     <MESSAGE value="Update Documents" />
     <MESSAGE value="Upload Game declaration" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Update Input Handler" />
+    <MESSAGE value="Update Docs" />
+    <MESSAGE value="Update Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

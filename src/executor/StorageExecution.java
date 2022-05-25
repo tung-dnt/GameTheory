@@ -9,7 +9,7 @@ import org.moeaframework.core.NondominatedPopulation;
 
 public class StorageExecution {
     public static void main(String[] args) throws IOException {
-        String inputFile = "TrafficControl.xlsx";
+        String inputFile = "OilManagement.xlsx";
         File file = new File(System.getProperty("user.dir")+"/input/"+inputFile);
 
         GameTheoryProblem problem = new GameTheoryProblem(file.getAbsolutePath(), 2);
