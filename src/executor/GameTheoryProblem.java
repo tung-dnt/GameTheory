@@ -4,8 +4,8 @@ package executor;
  * @General_Formula: STEPS TO FIND OUT THE BEST RESPONSE/NASH EQUILIBRIUM
  * 1)Set up the game with `load()` method
  * 2)Define each player's set of strategies with `loadNormalPlayersFromFile()`
- * 3)Find and eliminate dominant strategies with `eliminateDominantStrategies()`
- * 4)Find the pure strategy Nash Equilibria of the game
+ * 3)Find and eliminate conflict strategies with `eliminateDominantStrategies()`
+ * 4)Find the pure strategy Nash Equilibrium of the game
  * 5)Find the mixed strategy Nash Equilibrium of the game
  **/
 //--------------------------------------------------------------------------
@@ -140,7 +140,6 @@ public class GameTheoryProblem implements Problem {
             }
             playerAvgDiff /= normalPlayers.size();//529
             playerAvgDiffs.add(playerAvgDiff);
-
         }
         nash = Collections.min(playerAvgDiffs);
 
