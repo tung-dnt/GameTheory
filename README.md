@@ -159,4 +159,30 @@ a smaller payoff than some other strategy.
 
 ### Problem Description
 
+**Traffic Control**
+1) Context: Decision-making in route choosing to optimize travel time of commuters
+2) Game Model: <strong>R(G,vi,vj) = { r1,r2,…rQ }</strong> : All the routes from vi to vj consist of the route set R(G, vi, vj)
+  Where:
+  - vi and vj are two vertices of a graph G 
+  - route from vi to vj is represented by r 
+  - To calculate T function:  T(f)=Tf(1+0.15(xa/Ca)^4)
+  - ***To test Best-Response Dynamics procedure, we can try to calculate the potential energy of each edge***
+3) <strong>Data Process Flow</strong>: 
+
+---
+
+**Oil Management**
+1) Context: Oil can bring great revenues for the economy, along with those benefits, there are potential conflicts due to the interest of many agents involved in the exploration process.
+This cheatsheet may help to manage conflicts between countries sharing the same oil resources field by deciding to create an alliance or not.
+  - ***Condition***: Each player can have only one strategy at a time
+2) Game Model:
+3) <strong>Data Process Flow</strong>:
+
+---
+
+**Human Resources**
+1) Context:
+2) Game Model:
+3) <strong>Data Process Flow</strong>:
+
 ---
