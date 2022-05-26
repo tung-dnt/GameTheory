@@ -137,10 +137,6 @@ public class InputDataDriver {
 		file.close();
 		return cell.getStringCellValue();
 	}
-//
-//	public int getColumnNumberOfRow(int rowIndex) throws IOException {
-//		return sheet.getRow(0).getPhysicalNumberOfCells();
-//	}
 
 	public boolean isRowEmpty(int rowIndex) throws IOException {
 		Row row = sheet.getRow(rowIndex);

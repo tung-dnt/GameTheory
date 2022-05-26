@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="Update Documents">
+    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="Update Docs">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/InputDataDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/InputDataDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executor/Strategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/Strategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/executor/Conflict.java" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +41,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2607vYViQR21E0Xu94y8E3Txs2K" />
   <component name="ProjectViewState">
@@ -64,6 +70,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/input" />
       <recent name="$PROJECT_DIR$/src/executor" />
     </key>
   </component>
@@ -154,6 +161,12 @@
       <workItem from="1653228139735" duration="17544000" />
       <workItem from="1653271881150" duration="1757000" />
       <workItem from="1653293110321" duration="20519000" />
+      <workItem from="1653373086899" duration="5284000" />
+      <workItem from="1653385300913" duration="350000" />
+      <workItem from="1653385939915" duration="17000" />
+      <workItem from="1653470292837" duration="10884000" />
+      <workItem from="1653529197254" duration="1045000" />
+      <workItem from="1653530702904" duration="7585000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -337,7 +350,63 @@
       <option name="project" value="LOCAL" />
       <updated>1653366799022</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Upload Game declaration">
+      <created>1653367939647</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1653367939647</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refactor">
+      <created>1653376469014</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1653376469014</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Update Input Handler">
+      <created>1653493122977</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1653493122977</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update Docs">
+      <created>1653493133941</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1653493133941</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update Refactor">
+      <created>1653493143026</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1653493143026</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add Problem Models">
+      <created>1653501076401</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1653501076401</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update Docs">
+      <created>1653501086202</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1653501086202</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update Docs">
+      <created>1653501420531</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1653501420531</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,9 +442,14 @@
     <MESSAGE value="Update WorkSpace" />
     <MESSAGE value="Complete Nash Equilibrium Algorithm" />
     <MESSAGE value="Complete Printer" />
-    <MESSAGE value="Refactor" />
     <MESSAGE value="Update Documents" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Documents" />
+    <MESSAGE value="Upload Game declaration" />
+    <MESSAGE value="Refactor" />
+    <MESSAGE value="Update Input Handler" />
+    <MESSAGE value="Update Refactor" />
+    <MESSAGE value="Add Problem Models" />
+    <MESSAGE value="Update Docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Docs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
