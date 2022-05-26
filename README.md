@@ -176,6 +176,18 @@ a smaller payoff than some other strategy.
 This cheatsheet may help to manage conflicts between countries sharing the same oil resources field by deciding to create an alliance or not.
   - ***Condition***: Each player can have only one strategy at a time
 2) Game Model:
+- Normal Player: 4 countries [ A, B, C, D ]
+  + A: is one of the focal points for exploitation but have no technology needed to process crude oil into gasoline.
+  
+  + B: have quite large mines, but does not have the technology to refine from crude oil to gasoline => B has to sell cheap crude oil to another country and re-import gasoline at a high price.
+  
+  + C: have large mines and great refining technology => C can be completely independent and does not need to participate in the interests of alliances with other countries.
+  
+  + D: small-scale technology and small-scale mining => D will still be stable in all aspects, whether cooperation or not.
+- Properties: 2
+  + Amount of (crude) oil consumed
+  + Amount of gasoline produced
+- For each player, there are 4 strategies: 1 member alliance, 2 member alliances, 3 member alliances, 4 member alliances
 3) <strong>Data Process Flow</strong>:
 
 ---
