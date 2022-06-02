@@ -180,6 +180,8 @@ a smaller payoff than some other strategy.
 1) Context: Oil can bring great revenues for the economy, along with those benefits, there are potential conflicts due to the interest of many agents involved in the exploration process.
 This cheatsheet may help to manage conflicts between countries sharing the same oil resources field by deciding to create an alliance or not.
   - ***Condition***: Each player can have only one strategy at a time
+2) Game Model:
+- Normal Player: 4 countries [ A, B, C, D ]
   - ***Player 1 - Country A***:
     + Possesses 40% of the continent's area including both sea and land areas, but the sea area has little oil, and the mainland is mainly mountainous, difficult to exploit, or has no exploitation ability.
     + The continent's largest population, an unstable economy, mainly come from marine exploitation
@@ -202,8 +204,8 @@ This cheatsheet may help to manage conflicts between countries sharing the same 
     + The population in D is small, the economy is developed
     + D has crude oil processing technology
     + Despite possessing a large area, oil resources are rare, so for many years, A has been in dispute with D as its neighboring country because the oil resources on D are extremely large.
-
-2) Game Model:
-3) <strong>Data Process Flow</strong>:
-
+- Properties: 2
+  + Amount of (crude) oil consumed
+  + Amount of gasoline produced
+- For each player, there are 4 strategies: 1 member alliance, 2 member alliances, 3 member alliances, 4 member alliances
 ---
