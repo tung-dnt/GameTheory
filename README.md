@@ -161,6 +161,11 @@ a smaller payoff than some other strategy.
 
 **Traffic Control**
 1) Context: Decision-making in route choosing from A-B to optimize travel time, cost, consumed energy of commuters
+  
+  ***Sample Map***
+  
+  ![Screenshot from 2022-06-02 23-06-39](https://user-images.githubusercontent.com/71514053/171674924-d5a71334-cef1-4a46-9cfa-8e6c51a8176c.png)
+  
    + 4 different commuters with their target is to reach destination B with the lowest cost:
         - Player 1: represent for player choosing route A to C to B
         - Player 2: represent for player choosing route A to C to D to B
@@ -180,7 +185,7 @@ a smaller payoff than some other strategy.
 1) Context: Oil can bring great revenues for the economy, along with those benefits, there are potential conflicts due to the interest of many agents involved in the exploration process.
 This cheatsheet may help to manage conflicts between countries sharing the same oil resources field by deciding to create an alliance or not.
   - ***Condition***: Each player can have only one strategy at a time
-2) Game Model:
+2) Game Model:  
 - Normal Player: 4 countries [ A, B, C, D ]
   - ***Player 1 - Country A***:
     + Possesses 40% of the continent's area including both sea and land areas, but the sea area has little oil, and the mainland is mainly mountainous, difficult to exploit, or has no exploitation ability.
