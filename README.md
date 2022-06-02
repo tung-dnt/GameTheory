@@ -157,6 +157,8 @@ a smaller payoff than some other strategy.
 - Weakly Dominated Strategy - a strategy, such that, regardless of what any other players do, the strategy earns a
   player a smaller than or equal to some other strategy payoff.
 
+---
+
 ### Problem Description
 
 **Traffic Control**
