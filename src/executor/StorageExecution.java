@@ -12,7 +12,7 @@ public class StorageExecution {
         String inputFile = "OilManagement.xlsx";
         File file = new File(System.getProperty("user.dir") + "/input/" + inputFile);
 
-        GameTheoryProblem problem = new GameTheoryProblem(file.getAbsolutePath(), 2);
+        GameTheoryProblem problem = new GameTheoryProblem(file.getPath(), 2);
         // solve using NSGA-II
         NondominatedPopulation results = new Executor()
                 .withProblem(problem)
@@ -21,8 +21,8 @@ public class StorageExecution {
                 .distributeOnAllCores()
                 .run();
 
-        System.out.println("\nGAME THEORY INSTANCE:\n" + problem);
-        printDominantStrategy(problem, results);
+//        System.out.println("\nGAME THEORY INSTANCE:\n" + problem);
+//        printDominantStrategy(problem, results);
         printEquilibriaStrategy(problem, results);
     }
     //CLOUD ALLOCATION

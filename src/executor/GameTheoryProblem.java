@@ -138,7 +138,7 @@ public class GameTheoryProblem implements Problem {
             for (NormalPlayer opponent : normalPlayers) {
                 playerAvgDiff += Math.abs(player.getPurePayoff() - opponent.getPurePayoff());
             }
-            playerAvgDiff /= normalPlayers.size();//529
+            playerAvgDiff /= normalPlayers.size();
             playerAvgDiffs.add(playerAvgDiff);
         }
         nash = Collections.min(playerAvgDiffs);

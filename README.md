@@ -160,12 +160,17 @@ a smaller payoff than some other strategy.
 ### Problem Description
 
 **Traffic Control**
-1) Context: Decision-making in route choosing to optimize travel time of commuters
-2) Game Model: <strong>R(G,vi,vj) = { r1,r2,…rQ }</strong> : All the routes from vi to vj consist of the route set R(G, vi, vj)
+1) Context: Decision-making in route choosing from A-B to optimize travel time, cost, consumed energy of commuters
+   + 4 different commuters with their target is to reach destination B with the lowest cost:
+        - Player 1: represent for player choosing route A to C to B
+        - Player 2: represent for player choosing route A to C to D to B
+        - Player 3: represent for player choosing route A to D to B
+        - Player 4: represent for player choosing route A to D to C to B
+3) Game Model: <strong>R(G,vi,vj) = { r1,r2,…rQ }</strong> : All the routes from vi to vj consist of the route set R(G, vi, vj)
   Where:
   - vi and vj are two vertices of a graph G 
   - route from vi to vj is represented by r 
-  - To calculate T function:  T(f)=Tf(1+0.15(xa/Ca)^4)
+  - To calculate T/Time function:  T(f)=Tf(1+0.15(xa/Ca)^4)
   - ***To test Best-Response Dynamics procedure, we can try to calculate the potential energy of each edge***
 3) <strong>Data Process Flow</strong>: 
 
@@ -175,13 +180,29 @@ a smaller payoff than some other strategy.
 1) Context: Oil can bring great revenues for the economy, along with those benefits, there are potential conflicts due to the interest of many agents involved in the exploration process.
 This cheatsheet may help to manage conflicts between countries sharing the same oil resources field by deciding to create an alliance or not.
   - ***Condition***: Each player can have only one strategy at a time
-2) Game Model:
-3) <strong>Data Process Flow</strong>:
+  - ***Player 1 - Country A***:
+    + Possesses 40% of the continent's area including both sea and land areas, but the sea area has little oil, and the mainland is mainly mountainous, difficult to exploit, or has no exploitation ability.
+    + The continent's largest population, an unstable economy, mainly come from marine exploitation
+    + A does not have crude oil processing technology
+    + Imports from B at a high price, C at a low price
+    + A is in a sea dispute with D because of oil and gas resources in the sea
+  - ***Player 2 - Country B***:
+    + Own less with only 20%. However, B's oil resources are the second largest of the four countries
+    + B has a strong economy with an average population, but because of its rich oil background, it has the strongest economic foundation
+    + B does not have crude oil processing technology
+    + B's main customer is A, followed by D
+    + B transfers crude oil to D at a low price, buys back gasoline at a high price
+    + B competes with C in the path of oil export
+  - ***Player 3 - Country C***:
+    + Owns 30% but has no sea, is located deep in the delta, has the 3rd largest oil and gas resource base in 4 countries
+    + The population in C is large, the economy is behind B
+    + C has crude oil processing technology, so it sells a lot, sells it at a cheap price to partners, the biggest customer is A, followed by D
+  - ***PLayer 4 - Country D***:
+    + Own 10%, have the most petroleum resources
+    + The population in D is small, the economy is developed
+    + D has crude oil processing technology
+    + Despite possessing a large area, oil resources are rare, so for many years, A has been in dispute with D as its neighboring country because the oil resources on D are extremely large.
 
----
-
-**Human Resources**
-1) Context:
 2) Game Model:
 3) <strong>Data Process Flow</strong>:
 
