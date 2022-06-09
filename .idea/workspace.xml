@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="Update Docs">
+    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/HumanResources.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/input/OilManagement.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/OilManagement.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/TrafficControl.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/TrafficControl.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
@@ -52,24 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/tung-dnt/Documents/React+/ma_navi",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tung-dnt/Documents/FIT/GameTheory&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/input" />
@@ -174,7 +173,17 @@
       <workItem from="1653614659831" duration="50000" />
       <workItem from="1653648658596" duration="1806000" />
       <workItem from="1653664500609" duration="299000" />
-      <workItem from="1654180159800" duration="3799000" />
+      <workItem from="1654180159800" duration="4780000" />
+      <workItem from="1654246631410" duration="2978000" />
+      <workItem from="1654610358120" duration="1522000" />
+      <workItem from="1654653059939" duration="25000" />
+      <workItem from="1654667748561" duration="1456000" />
+      <workItem from="1654673359179" duration="12000" />
+      <workItem from="1654701970449" duration="4718000" />
+      <workItem from="1654738557534" duration="1824000" />
+      <workItem from="1654758230423" duration="341000" />
+      <workItem from="1654767262789" duration="8434000" />
+      <workItem from="1654782754012" duration="3725000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -421,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653540740347</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Update Document">
+      <created>1654185336476</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1654185336476</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +480,8 @@
     <MESSAGE value="Update Refactor" />
     <MESSAGE value="Add Problem Models" />
     <MESSAGE value="Update Docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Docs" />
+    <MESSAGE value="Update Document" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Document" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

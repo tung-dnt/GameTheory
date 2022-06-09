@@ -52,6 +52,7 @@ public class GameTheoryProblem implements Problem {
     private List<Conflict> conflictSet;
     //Store average pure payoff differences
     private List<Double> playerAvgDiffs;
+    int[] bestResponses = new int[4];
 
     public GameTheoryProblem(String path, int startRow) throws IOException {
         super();
@@ -62,6 +63,7 @@ public class GameTheoryProblem implements Problem {
         // Load user input data from .xlsx file
         load(path, startRow);
         eliminateConflictStrategies();
+        computeNashEquilibrium();
     }
 
     /**
@@ -99,27 +101,40 @@ public class GameTheoryProblem implements Problem {
      * Conflict set format: Left Player, Left Player Strategy, Right Player, Right Player Strategy
      */
     private void eliminateConflictStrategies() {
-        if (conflictSet != null) {
-            for (Conflict conflict : conflictSet) {
-                NormalPlayer evaluatingLeftPlayer = normalPlayers.get(conflict.getLeftPlayer());
-                NormalPlayer evaluatingRightPlayer = normalPlayers.get(conflict.getRightPlayer());
-                int leftConflictStrat = conflict.getLeftPlayerStrategy();
-                int rightConflictStrat = conflict.getRightPlayerStrategy();
+        if (conflictSet == null) return;
 
-                // IF STRATEGY BELONG TO SPECIAL PLAYER -> DON'T REMOVE
-                // Set conflict strategy of right player to null
-                if (evaluatingLeftPlayer.getStrategyAt(leftConflictStrat) != null && conflict.getLeftPlayer() > -1) {
-                    evaluatingLeftPlayer.removeStrategiesAt(leftConflictStrat);
-                }
-                // Set conflict strategy of right player to null
-                if (evaluatingRightPlayer.getStrategyAt(rightConflictStrat) != null && conflict.getRightPlayer() > -1) {
-                    evaluatingRightPlayer.removeStrategiesAt(rightConflictStrat);
-                }
-            }
-            //Completely remove all inappropriate strategies from Evaluating Strategies
-            for (NormalPlayer player : normalPlayers)
-                player.removeAllNull();
+        for (Conflict conflict : conflictSet) {
+            NormalPlayer evaluatingLeftPlayer = normalPlayers.get(conflict.getLeftPlayer());
+            NormalPlayer evaluatingRightPlayer = normalPlayers.get(conflict.getRightPlayer());
+            int leftConflictStrat = conflict.getLeftPlayerStrategy();
+            int rightConflictStrat = conflict.getRightPlayerStrategy();
+
+            // IF STRATEGY BELONG TO SPECIAL PLAYER -> DON'T REMOVE
+            // Set conflict strategy of right player to null
+            if (evaluatingLeftPlayer.getStrategyAt(leftConflictStrat) != null && conflict.getLeftPlayer() > -1)
+                evaluatingLeftPlayer.removeStrategiesAt(leftConflictStrat);
+
+            // Set conflict strategy of right player to null
+            if (evaluatingRightPlayer.getStrategyAt(rightConflictStrat) != null && conflict.getRightPlayer() > -1)
+                evaluatingRightPlayer.removeStrategiesAt(rightConflictStrat);
+
         }
+        //Completely remove all inappropriate strategies from Evaluating Strategies
+        for (NormalPlayer player : normalPlayers)
+            player.removeAllNull();
+    }
+
+    private List<Double> buildPayoffGlopses(List<NormalPlayer> players) {
+        List<Double> playerAvgDiffs = new ArrayList<>();
+        for (NormalPlayer player : players) {
+            double playerAvgDiff = 0;
+            for (NormalPlayer opponent : players) {
+                playerAvgDiff += Math.abs(player.getPurePayoff() - opponent.getPurePayoff());
+            }
+            playerAvgDiff /= normalPlayers.size();
+            playerAvgDiffs.add(playerAvgDiff);
+        }
+        return playerAvgDiffs;
     }
 
     /**
@@ -131,21 +146,10 @@ public class GameTheoryProblem implements Problem {
      */
     private double computeNashEquilibrium() {
         double nash;
-        List<Double> playerAvgDiffs = new ArrayList<>();
-        //Set payoff for every normal player
-        for (NormalPlayer player : normalPlayers) {
-            double playerAvgDiff = 0;
-            for (NormalPlayer opponent : normalPlayers) {
-                playerAvgDiff += Math.abs(player.getPurePayoff() - opponent.getPurePayoff());
-            }
-            playerAvgDiff /= normalPlayers.size();
-            playerAvgDiffs.add(playerAvgDiff);
-        }
+        List<Double> playerAvgDiffs = buildPayoffGlopses(normalPlayers);
         nash = Collections.min(playerAvgDiffs);
 
-        if (specialPlayer != null) {
-            nash = Math.abs(nash - specialPlayer.getPayoff());
-        }
+        if (specialPlayer != null) nash = Math.abs(nash - specialPlayer.getPayoff());
         this.playerAvgDiffs = playerAvgDiffs;
 
         return nash;
@@ -173,8 +177,27 @@ public class GameTheoryProblem implements Problem {
      * ----> The lower payoff average difference, the more equilibrium strategy is
      */
     public int getBestResponse() {
-        computeNashEquilibrium();
         return playerAvgDiffs.indexOf(Collections.min(playerAvgDiffs));
+    }
+
+    public int[] getRemainAlliances() {
+        int[] bestResponse = new int[normalPlayers.size()];
+        Arrays.fill(bestResponse, 2);
+        int bestPlayerIndex = getBestResponse();
+        int bestStrategyIndex = normalPlayers.get(bestPlayerIndex).getDominantStrategyIndex();
+        bestResponse[bestPlayerIndex] = bestStrategyIndex;
+
+        if (bestStrategyIndex == normalPlayers.size() - 1) {
+            for (double p : bestResponse) p = bestStrategyIndex;
+        } else {
+            for (int i = 0; i < normalPlayers.size(); ++i) {
+                int upperBound = normalPlayers.size() - i;
+                if (bestStrategyIndex == i) {
+                    bestResponses[i] = playerAvgDiffs.indexOf(Collections.min(playerAvgDiffs)) / upperBound;
+                } else bestResponses[i] = 2;
+            }
+        }
+        return bestResponse;
     }
 
     /**

@@ -12,7 +12,7 @@ public class StorageExecution {
         String inputFile = "OilManagement.xlsx";
         File file = new File(System.getProperty("user.dir") + "/input/" + inputFile);
 
-        GameTheoryProblem problem = new GameTheoryProblem(file.getPath(), 2);
+        GameTheoryProblem problem = new GameTheoryProblem(file.getPath(), 16);
         // solve using NSGA-II
         NondominatedPopulation results = new Executor()
                 .withProblem(problem)
@@ -24,12 +24,9 @@ public class StorageExecution {
 //        System.out.println("\nGAME THEORY INSTANCE:\n" + problem);
 //        printDominantStrategy(problem, results);
         printEquilibriaStrategy(problem, results);
+        printRemaining(problem);
     }
-    //CLOUD ALLOCATION
 
-    //
-
-    //TRAFFIC CONTROL
     private static void printDominantStrategy(GameTheoryProblem problem, NondominatedPopulation result) {
         List<NormalPlayer> players = problem.getNormalPlayers();
         int outstandingPlayerIndex = problem.getDominantPlayerIndex();
@@ -53,5 +50,18 @@ public class StorageExecution {
         System.out.printf("Normal Player %d - Strategy %d\n", equiPlayerIndex + 1, bestRes + 1);
         System.out.printf("Best Response Payoff: %.2f\n", player.getStrategyAt(bestRes).getPayoff());
         System.out.printf("Properties of best response: %s\n\n", player.getStrategyAt(bestRes));
+    }
+
+    private static void printRemaining(GameTheoryProblem problem) {
+        List<NormalPlayer> players = problem.getNormalPlayers();
+        int[] bestResponses = problem.getRemainAlliances();
+        int equiPlayerIndex = problem.getBestResponse();
+
+        for (int i = 0; i < bestResponses.length; ++i) {
+            if (i == equiPlayerIndex) continue;
+            System.out.printf("Normal Player %d - Strategy %d\n", i + 1, bestResponses[i] + 1);
+            System.out.printf("Best Response Payoff: %.2f\n", players.get(i).getStrategyAt(bestResponses[i]).getPayoff());
+            System.out.printf("Properties of best response: %s\n\n", players.get(i).getStrategyAt(bestResponses[i]));
+        }
     }
 }

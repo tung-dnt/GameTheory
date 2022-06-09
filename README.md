@@ -179,7 +179,6 @@ a smaller payoff than some other strategy.
   - route from vi to vj is represented by r 
   - To calculate T/Time function:  T(f)=Tf(1+0.15(xa/Ca)^4)
   - ***To test Best-Response Dynamics procedure, we can try to calculate the potential energy of each edge***
-3) <strong>Data Process Flow</strong>: 
 
 ---
 
@@ -217,5 +216,6 @@ This cheatsheet may help to manage conflicts between countries sharing the same 
 2) Game Model:  
 
   ![image](https://user-images.githubusercontent.com/71514053/172658129-6e724342-526d-484b-b70c-b9beac169d09.png)
+
 
 ---
