@@ -173,12 +173,11 @@ a smaller payoff than some other strategy.
         - Player 2: represent for player choosing route A to C to D to B
         - Player 3: represent for player choosing route A to D to B
         - Player 4: represent for player choosing route A to D to C to B
-3) Game Model: <strong>R(G,vi,vj) = { r1,r2,…rQ }</strong> : All the routes from vi to vj consist of the route set R(G, vi, vj)
-  Where:
-  - vi and vj are two vertices of a graph G 
-  - route from vi to vj is represented by r 
-  - To calculate T/Time function:  T(f)=Tf(1+0.15(xa/Ca)^4)
-  - ***To test Best-Response Dynamics procedure, we can try to calculate the potential energy of each edge***
+2) Game Model: 
+
+![image](https://user-images.githubusercontent.com/71514053/172880667-e629cad8-c575-4bb1-ac03-870e79e5aec6.png)
+
+
 3) <strong>Data Process Flow</strong>: 
 
 ---
