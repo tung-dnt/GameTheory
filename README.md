@@ -178,8 +178,6 @@ a smaller payoff than some other strategy.
 ![image](https://user-images.githubusercontent.com/71514053/172880667-e629cad8-c575-4bb1-ac03-870e79e5aec6.png)
 
 
-3) <strong>Data Process Flow</strong>: 
-
 ---
 
 **Oil Management**
