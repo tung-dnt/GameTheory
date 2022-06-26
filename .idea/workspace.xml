@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
+    <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="Update algorithm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/OilManagement.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/OilManagement.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/TrafficControl.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/TrafficControl.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

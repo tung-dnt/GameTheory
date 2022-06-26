@@ -173,12 +173,35 @@ a smaller payoff than some other strategy.
         - Player 2: represent for player choosing route A to C to D to B
         - Player 3: represent for player choosing route A to D to B
         - Player 4: represent for player choosing route A to D to C to B
+   + Number of players: 1000 commuters
+   + <strong>Rule</strong>: There are 2 context in this game:
+        a) When 1000 players all use OP1 pattern (1-4-9-15-19)
+        b) When 500 players use OP1 (1-4-9-15-19) while the other 500 players use OP2 pattern (1-5-8-17-15-19)
+  
 2) Game Model: 
 
 ![image](https://user-images.githubusercontent.com/71514053/172880667-e629cad8-c575-4bb1-ac03-870e79e5aec6.png)
 
+3) Input Data Implementation: 
 
-3) <strong>Data Process Flow</strong>: 
+  ***Special Players(SP) Input***
+  a) Properties of SP:
+  Public Transportation Profit | Emission Cost | Infrastructure Loss 
+  
+  b) Weight Calculation: 
+  
+  
+  ***Normal Players(NP) Input***
+  a) 2 strategy/player:
+    - First Strategy: in the first context (all player use OP1 route)
+    - Second Strategy: in second context (choose either OP1 or OP2)
+
+  b) Properties of a strategy:
+  | Free-flow Travel Time (Travel time in ideal condition) | Average Link Capacity among Nodes | Average Number of drivers using edges per hour | Average Energy consumed  |
+  
+  c) Weight calculation:
+  
+  
 
 ---
 
@@ -216,5 +239,7 @@ This cheatsheet may help to manage conflicts between countries sharing the same 
 2) Game Model:  
 
   ![image](https://user-images.githubusercontent.com/71514053/172658129-6e724342-526d-484b-b70c-b9beac169d09.png)
+
+3) Input Data Implementation:
 
 ---
