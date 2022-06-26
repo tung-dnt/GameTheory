@@ -196,7 +196,7 @@ a smaller payoff than some other strategy.
   
   ### Emission Cost: AnnualCost/365/24*1000
   
-  ### Infrastructure Loss: UnrealisabilityCost/365/24*1000
+  ### Infrastructure Loss: UnrealisabilityCost/365/24*1000/10
   
   ***Normal Players(NP) Input***
   a) 2 strategy/player:
