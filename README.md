@@ -189,7 +189,9 @@ a smaller payoff than some other strategy.
   Public Transportation Profit | Emission Cost | Infrastructure Loss 
   
   b) Weight Calculation: 
-  
+
+  ![image](https://user-images.githubusercontent.com/71514053/175828050-320ba6a0-6f25-4fe0-a6f1-f51039aad9a0.png)
+
   
   ***Normal Players(NP) Input***
   a) 2 strategy/player:
@@ -201,7 +203,8 @@ a smaller payoff than some other strategy.
   
   c) Weight calculation:
   
-  
+  ![image](https://user-images.githubusercontent.com/71514053/175827970-068c6bde-ef17-4481-b9f6-ae5cf7e1ff18.png)
+
 
 ---
 
