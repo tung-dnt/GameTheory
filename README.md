@@ -14,6 +14,8 @@ biology.
 
 ---
 
+### Input Data placed in /input directory, please check it for further reference
+
 ### Game Representations
 
 **Players**: who are the decision makers?
