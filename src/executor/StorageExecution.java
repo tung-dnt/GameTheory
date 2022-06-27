@@ -22,9 +22,9 @@ public class StorageExecution {
                 .run();
 
 //        System.out.println("\nGAME THEORY INSTANCE:\n" + problem);
-//        printDominantStrategy(problem, results);
+        printDominantStrategy(problem, results);
         printEquilibriaStrategy(problem, results);
-        printRemaining(problem);
+//        printRemaining(problem);
     }
 
     private static void printDominantStrategy(GameTheoryProblem problem, NondominatedPopulation result) {

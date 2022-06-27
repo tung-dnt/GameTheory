@@ -56,7 +56,7 @@ public class InputDataDriver {
 
 		int numberOfWeights = getValueOfCoordinate(startRow, 1).intValue();
 		for (int i = 0; i < numberOfWeights; i++) {
-			weights.add(getValueOfCoordinate(startRow, i));
+			weights.add(getValueOfCoordinate(startRow + 1, i));
 		}
 		return  weights;
 	}

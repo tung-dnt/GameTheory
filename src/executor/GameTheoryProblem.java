@@ -86,7 +86,6 @@ public class GameTheoryProblem implements Problem {
             specialPlayer = driver.loadSpecialPlayerFromFile(startRow);
             System.out.println(specialPlayer);
         }
-
         List<Double> normalPlayerWeights = driver.loadNormalPlayerWeights(NORMAL_PLAYER_START_ROW);
         normalPlayers = driver.loadNormalPlayersFromFile(NORMAL_PLAYER_START_ROW, normalPlayerWeights);
         conflictSet = driver.loadConflictSetFromFile(CONFLICT_SET_START_ROW);
