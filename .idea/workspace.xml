@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/SpecialPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/SpecialPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/SpecialPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +184,7 @@
       <workItem from="1654767262789" duration="8434000" />
       <workItem from="1654782754012" duration="3725000" />
       <workItem from="1656292545392" duration="3181000" />
-      <workItem from="1656512471385" duration="2729000" />
+      <workItem from="1656512471385" duration="3095000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -461,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656515141369</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="refactor">
+      <created>1656515222060</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1656515222061</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Refactor, Update Solution algorithm" />
     <MESSAGE value="Update production classes" />
     <MESSAGE value="Update Algorithm" />
     <MESSAGE value="Add `getDominantPlayerIndex()` function" />
@@ -505,7 +516,8 @@
     <MESSAGE value="Update `TrafficControl.xlsx`" />
     <MESSAGE value="Update Executor in case Special Player exists" />
     <MESSAGE value="Update Nash displayer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Nash displayer" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -529,7 +541,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/executor/GameTheoryProblem.java</url>
-          <line>183</line>
+          <line>182</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

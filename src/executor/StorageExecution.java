@@ -10,7 +10,7 @@ import org.moeaframework.core.Solution;
 
 public class StorageExecution {
     public static void main(String[] args) throws IOException {
-        String inputFile = "OilManagement.xlsx";
+        String inputFile = "TrafficControl.xlsx";
         File file = new File(System.getProperty("user.dir") + "/input/" + inputFile);
 
         GameTheoryProblem problem = new GameTheoryProblem(file.getPath(), 16);

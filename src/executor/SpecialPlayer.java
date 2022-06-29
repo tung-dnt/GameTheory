@@ -60,10 +60,10 @@ public class SpecialPlayer {
         for (Double x : properties) {
             SP.append(x).append("\t");
         }
-        SP.append("\nWeight");
+        SP.append("\nWeight:\n");
         for (Double x : weights) {
             SP.append(x).append("\t");
         }
-        return SP + "Payoff: " + payoff;
+        return SP + "\nPayoff: " + payoff;
     }
 }
