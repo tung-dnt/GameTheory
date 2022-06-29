@@ -36,7 +36,7 @@ public class StorageExecution {
         System.out.print("==================================\nBEST RESPONSE:\n");
         System.out.printf("Normal Player %d - Strategy %d\n", equiPlayerIndex + 1, bestRes + 1);
         System.out.printf("Best Response Payoff: %.2f\n", player.getStrategyAt(bestRes).getPayoff());
-        System.out.printf("NASH EQUILIBRIUM: %.2f", nashEquilibrium);
+        System.out.printf("NASH EQUILIBRIUM: %.2f\n\n", nashEquilibrium);
     }
 
     private static void printDominantStrategy(GameTheoryProblem problem, NondominatedPopulation result) {
