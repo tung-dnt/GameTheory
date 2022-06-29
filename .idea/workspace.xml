@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4840d386-2bad-452f-8166-cafe98ecd44e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/TrafficControl.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/input/TrafficControl.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/GameTheoryProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executor/InputDataDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/InputDataDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/GameTheoryProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/InputDataDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/examples/gametheory/production/GameTheory/executor/StorageExecution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executor/StorageExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executor/StorageExecution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +182,8 @@
       <workItem from="1654758230423" duration="341000" />
       <workItem from="1654767262789" duration="8434000" />
       <workItem from="1654782754012" duration="3725000" />
-      <workItem from="1656292545392" duration="2481000" />
+      <workItem from="1656292545392" duration="3181000" />
+      <workItem from="1656512471385" duration="2623000" />
     </task>
     <task id="LOCAL-00001" summary="init InputDataDriver">
       <created>1648130948097</created>
@@ -450,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656267926061</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Update Executor in case Special Player exists">
+      <created>1656295082545</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1656295082546</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +477,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Update solutions" />
     <MESSAGE value="Refactor printer" />
     <MESSAGE value="Refactor, Update Solution algorithm" />
     <MESSAGE value="Update production classes" />
@@ -494,7 +501,8 @@
     <MESSAGE value="Update Document" />
     <MESSAGE value="Update Docs" />
     <MESSAGE value="Update `TrafficControl.xlsx`" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update `TrafficControl.xlsx`" />
+    <MESSAGE value="Update Executor in case Special Player exists" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Executor in case Special Player exists" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
